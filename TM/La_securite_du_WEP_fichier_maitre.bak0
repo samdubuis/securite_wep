@@ -1,0 +1,88 @@
+\documentclass[10pt,a4paper,twoside,openright]{report}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+
+%-----------------------------------------------------------------
+%RAJOUT FICHIER STYLE ET PAQUETS SUPPLÉMENTAIRES
+%-----------------------------------------------------------------
+\usepackage{style/styles_perso}
+% ----------------------------------------------------------------------------------------------------------------
+
+\begin{document}
+% ---------------------------------------------------------------- PAGE TITRE
+
+\include{page_titre}
+\newpage\null\thispagestyle{empty}\newpage
+\cleardoublepage
+
+% ---------------------------------------------------------------- RESUME
+
+\addcontentsline{toc}{chapter}{Résumé}
+
+\pagenumbering{gobble}
+\include{La_securite_du_WEP_resume}
+\newpage\null\thispagestyle{empty}\newpage
+
+% ---------------------------------------------------------------- TABLE DES MATIERES
+
+\pagenumbering{roman}
+	\tableofcontents
+\thispagestyle{plain}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\cleardoublepage
+
+% ---------------------------------------------------------------- BODY
+
+\pagenumbering{arabic}
+
+\include{La_securite_du_WEP_ch01}
+
+\include{La_securite_du_WEP_ch02}
+\newpage\null\thispagestyle{empty}\newpage
+
+\include{La_securite_du_WEP_ch03}
+
+\include{La_securite_du_WEP_ch04}
+\newpage\null\thispagestyle{empty}\newpage
+
+\include{La_securite_du_WEP_ch05}
+\newpage\null\thispagestyle{empty}\newpage
+
+% ---------------------------------------------------------------- GLOSSAIRE
+
+\setcounter{chapter}{1}
+\addcontentsline{toc}{chapter}{\Alph{chapter} Glossaire}
+\include{La_securite_du_WEP_glossaire}
+\newpage\null\thispagestyle{empty}\newpage
+
+
+% ---------------------------------------------------------------- BIBLIOGRAPHIE
+
+\nocite{*}
+\bibliographystyle{style/bibliostyle}
+\bibliography{La_securite_du_WEP_bibliographie}
+
+\setcounter{chapter}{2}
+\addcontentsline{toc}{chapter}{\Alph{chapter} Bibliographie}
+
+% ---------------------------------------------------------------- ANNEXES
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\setcounter{chapter}{3}
+\addcontentsline{toc}{chapter}{\Alph{chapter} Articles de loi}
+
+\appendix
+\include{La_securite_du_WEP_annexe}
+% ----------------------------------------------------------------
+
+
+\end{document}

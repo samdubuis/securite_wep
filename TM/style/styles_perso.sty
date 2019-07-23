@@ -1,0 +1,82 @@
+%---------------------------------------------------------------
+%PAQUETS RAJOUTES
+%---------------------------------------------------------------
+\usepackage[french]{babel}
+\usepackage[french]{translator}
+\usepackage{xcolor}
+\usepackage{listings}	
+\usepackage{geometry}
+%\usepackage{glossaries}
+\usepackage[nonumberlist,acronym]{glossaries}
+\usepackage{ dsfont }
+
+%---------------------------------------------------------------
+%MARGE ET MISE EN PAGE GENERALE
+%---------------------------------------------------------------
+\geometry{textwidth=15.5Cm,textheight=24cm,right=2cm,top=3cm, footskip=1.5cm}
+
+%---------------------------------------------------------------
+%MODIFICATION PAQUET LISTINGS
+%---------------------------------------------------------------
+\lstdefinestyle{Bash}
+{	frame=trbl,
+	language=bash,
+	keywordstyle=,
+	basicstyle=\ttfamily,
+	alsoletter={~},
+	morekeywords=[2]{root@kali},
+	keywordstyle=[2]{\color{red}},
+	literate={~}{{\textcolor{blue}{$\sim$}}}1,
+	commentstyle=,
+}
+
+\lstdefinestyle{smaller}
+{	frame=trbl,
+	language=bash,
+	keywordstyle=,
+	basicstyle=\ttfamily\small,
+	alsoletter={~},
+	morekeywords=[2]{root@kali},
+	keywordstyle=[2]{\color{red}},
+	literate={~}{{\textcolor{blue}{$\sim$}}}1,
+	commentstyle=,
+}
+
+
+% ----------------------------------------------------------------------------------------------------------------
+% EN-TETE PERSONNALISE ET PAQUET FANCYHDR
+% ----------------------------------------------------------------------------------------------------------------
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. \ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LO,RE]{\bfseries \rightmark}
+\fancyhead[LE,RO]{\bfseries \leftmark}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyfoot[C]{\thepage}
+}
+\fancypagestyle{simple}{
+	\fancyhead[LO,RE]{}
+}
+\setlength\headheight{15pt}
+
+
+% ----------------------------------------------------------------------------------------------------------------
+% TITRES PERSONNALISES
+% ----------------------------------------------------------------------------------------------------------------
+\RequirePackage{titlesec}	
+\titleformat{\chapter}[frame]			% frame pour avoir un cadre
+{\normalfont\normalsize\scshape}		% Format du bandeau
+{ Chapitre \arabic{chapter} }		% Texte du bandeau
+{15pt}								% avec frame : esp. vertical autour du titre
+{\LARGE\bfseries\filcenter}[]		% avant la composition du titre
+
+\titlespacing{\chapter}					% régler l'espacement autour du titre de chapitre
+{0pt}								% à gauche
+{-18pt}								% avant
+{15pt}								% après
+[0cm]								% à droite

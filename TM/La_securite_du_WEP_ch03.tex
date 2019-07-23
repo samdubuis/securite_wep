@@ -1,0 +1,163 @@
+\chapter{Le WEP}
+Dans les années 90 aucune protection n'existait pour protéger toutes sortes de données, sensibles ou non, circulant dans l'air grâce aux réseaux sans-fil. Les données était sécurisée seulement par LAN, en connectant des câbles entre les machines. L'encryptage WEP est la première sécurité mise en place par les services de l'IEEE. Introduit en 1999 en même temps que le standard 802.11b, son but était de protéger et crypter les données d'une manière comparable à celle d'une connexion filaire. 
+
+Cinq ans plus tard, avec le nouveau standard 802.11i (mise en place du WPA2), l'IEEE déclarera le WEP obsolète et vulnérable. Auparavant, il avait déjà été surnommé \emph{Weak Encryption Protocol}\footnote{Protocole d'encryptage faible} par les informaticiens connaisseurs, pour s'en moquer.
+\\
+
+La rédaction de ce chapitre a été réalisée principalement à l'aide d'un livre, écrit par Aurélien Géron, nommé \og WiFi professionnel: la norme 802.11, le déploiement, la sécurité \fg{} et édité à Paris par Dunod. Ce livre m'a permis de nettement mieux comprendre le fonctionnement de cet encryptage et donc d'être capable de l'expliquer beaucoup plus clairement. Les schémas en sont aussi inspirés.
+
+
+\section{Caractéristiques}
+
+	\subsection{Les clés WEP}
+Le WEP est une protection plutôt simple. Une clé de 40 ou 104 bits est mise en place sur un \emph{Access Point} et chaque client voulant s'y connecter doit entrer la même clé. Elles peuvent être saisies de plusieurs façons différentes :
+\begin{itemize}
+	\item au format hexadécimal, avec 5 octets pour une clé de 40 bits
+	\item au format textuel, avec 13 octets pour une clé de 104 bits
+	\item ou encore en donnant un mot de passe quelconque, qu'un adaptateur transformera en une clé de 40 ou 104 bits
+\end{itemize}
+Ce sont des clés partagées, mais leur diffusion pose problème. Il faut les changer régulièrement et cela prend du temps. Dans une entreprise, l'opération de changement serait encore plus importante au vu du nombre de clés à changer.
+
+Une des caractéristiques du WEP permet la définition de quatre clés différentes, dont une seule qui est active et qui s'occupe d'émettre. Cela permet de changer la clé d'encryptage de manière facilitée. 
+
+De plus, il est possible de définir une deuxième sorte de protection, la clé individuelle. Chaque utilisateur définit sa propre clé qui sera ensuite inscrite dans l'AP en plus de son adresse MAC. Bien que la quantité de clés puisse être conséquente dans une grande entreprise, la sécurité est accrue car chaque employé ne connait que sa clé WEP.
+\\
+
+Le changement des clés est automatisé. La deuxième clé est inscrite dans les AP, mais n'est pas activée. Cette dernière va être configurée ensuite dans chaque station. Finalement, la première clé peut être supprimée de l'AP et des stations des utilisateurs.
+\\
+
+C'est pour cela que jusqu'à quatre clés peuvent être mises à disposition : les clés individuelles et partagées originales et les nouvelles clés de chaque sorte. 
+Elles n'empêchent ni le \emph{broadcast}, ni le \emph{multicast} et l'\emph{unicast}. L'AP est capable de déchiffrer n'importe quel paquet grâce à la clé individuelle et de le faire suivre à n'importe qui. Si le destinataire est unique, la clé individuelle est utilisée. Si les destinataires sont plus nombreux, la clé partagée est utilisée.
+
+\newpage
+
+Dans l'exemple ci-dessous (figure 3.1), le client 1 envoie un paquet crypté avec sa clé personnelle. Le point d'accès décrypte le paquet et le transfert en broadcast grâce à la clé partagée par le client 2 et 3.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.6]{images/broadcast.png}
+	\caption{Exemple de broadcasting}
+\end{figure}
+
+
+	\subsection{Le fonctionnement du WEP}
+	
+		\subsubsection{La clé RC4 et l'opération XOR}
+Le WEP repose sur un algorithme appelé RC4, conçu par Ron Rivest.
+\begin{quote}
+\quotedblbase En soi, RC4 ne crypte rien : son rôle est de produire une série de bits pseudo-aléatoires. Pour cela, il faut lui fournir un point de départ, c'est-à-dire un certain nombre de bits quelconques qu'on appelle la \og clé RC4 \fg{}.\textquotedblright \footnote{GÉRON, Aurélien. \emph{WiFi professionnel: la norme 802.11, le déploiement, la sécurité.} Paris: Dunod, 2009. P.227}		
+\end{quote}	
+Il y a un point important à retenir : les séquences ont l'air parfaitement aléatoires, mais on peut obtenir la même séquence de bits de base, si on connait la clé RC4.
+\\
+
+L'opération XOR (\emph{eXclusive OR}, ou exclusif) est utilisée en combinaison avec la clé RC4 pour crypter les données. Elle agit comme une addition binaire, sans retenue. 
+
+Par exemple : 
+\begin{center}
+	$10101 \bigoplus 11100 = 01001$
+\end{center}
+
+Un message d'un certain nombre de bits est créé. Grâce à la clé RC4, une séquence aléatoire du même nombre de bits est générée et, en additionnant les deux à l'aide de l'opération XOR, le message est crypté. Il pourra seulement être décrypté par le destinataire qui lui aussi doit posséder la même clé RC4 et donc recréer la séquence de bits aléatoires.
+	
+Si la même clé était utilisée lors de plusieurs messages cryptés, il serait possible à l'aide de plusieurs opérations de retrouver le message, sans même avoir à connaitre la clé RC4, peu importe sa taille ! 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.69]{images/cle_rc4.PNG}
+	\caption[]{Fonctionnement de la clé RC4}
+\end{figure}
+
+		\subsubsection{Le vecteur d'initialisation et le contrôle d'intégrité}
+Le schéma de la figure 3.3 permet de mieux visualiser les opérations réalisées et le contenu final d'un paquet.		
+		
+Le \emph{nonce} (un chiffre placé à l'avant de la clé fixe définie par l'utilisateur) a été créé pour éviter le problème de la répétition des clés. Avec le WEP, le nonce est composé de 3 octets (24 bits) et se nomme un \emph{Initialisation Vector}\footnote{Vecteur d'initialisation. Il sera régulièrement appelé IV(s) le long de ce travail.} (IV). Ce dernier n'est censé être utilisé qu'une seule fois et est envoyé en clair au début de chaque paquet, suivi d'un ID (abréviation du mot anglais \emph{Identity}) qui indique laquelle des quatre clés WEP a été utilisée.
+\\
+
+Puis on rajoute au paquet WiFi, ou bloc de données, un code de redondance cyclique (CRC) de 32 bits à sa fin. Calculé en fonction du contenu du paquet, le CRC forme une sorte de résumé, qui ne serait plus valable si le contenu était modifié. Conçu pour lutter contre les erreurs de transmissions, rien n'empêche un hacker d'intercepter le paquet, le modifier et simplement recalculer son CRC pour le renvoyer à l'endroit de son choix.
+ 
+C'est pour cette raison que le WEP a défini l'\emph{Integrity Check Value} (ICV), signifiant valeur du contrôle d'intégrité. Elle est similaire au CRC, également inscrite sur 32 bits, mais à la différence que l'ICV est calculée sur le message original et non sur le message \og prêt à partir \fg{} comme le fait le CRC. Elle est donc insérée à la fin du message original, puis sera inclue dans le cryptage. 
+\\
+
+Comme le montre le schéma ci-dessous, le paquet consiste d'abord en un en-tête MAC, qui spécifie l'émetteur. Puis, l'IV est inscrit, suivi du \emph{Key ID}\footnote{Numéro de clé}, qui indique quelle clé a été utilisée pour crypter le message et l'ICV cryptée déjà auparavant. Finalement, le CRC est calculé et rajouté à la fin du paquet.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=\textwidth]{images/paquetwifi.png}
+	\caption[]{Constitution final d'un paquet WiFi}
+\end{figure}
+
+\newpage
+
+		\subsubsection{L'authentification WEP}
+Pour pouvoir se connecter à un point d'accès, une station doit d'abord demander une requête d'authentification auprès de ce dernier. S'il est en mode \og ouvert \fg{}, il y répond positivement. Toutefois, la station maintenant authentifiée n'est pas encore associée.
+
+Par contre, si l'AP est en mode \og authentification \fg{}, il enverra un défi à la station. Le défi consiste à crypter grâce à l'algorithme du WEP un texte de 128 caractères et le renvoyer à l'AP. Si le résultat est correct, l'authentification est faite. Le point d'accès répond alors positivement et la station peut s'associer.
+	
+	
+\section{Faiblesses et attaques}
+L'encryptage WEP contient malheureusement beaucoup de défauts. Malgré les efforts fournis par les chercheurs de l'IEEE pour développer des parades, le 802.11 n'est pas inaccessible aux attaques d'un hacker s'y connaissant.
+
+	\subsection{La répétition des clés RC4}
+L'\emph{Initialisation Vector} (IV) est trop court car constitué de seulement 24 bits. Cela donne approximativement 17 millions de possibilités différentes pour l'IV. Sur un réseau occupé, comme celui d'une entreprise, de nos jours où les débits moyens sont conséquents, les 17 millions peuvent être atteints en moins d'une heure ! Le trafic est suffisamment conséquent au vu du nombre de personnes connectées dessus pour qu'à partir d'un certain moment, l'IV se répète. Un hacker n'a qu'à mettre sa carte réseau sans-fil en mode moniteur afin \og d'écouter \fg{} le réseau et de \emph{sniffer}\footnote{Capture des paquets réseaux.} jusqu'à avoir capturé assez de paquets, dont deux avec le même IV.
+Grâce à cela, un pirate informatique peut être capable de mettre en place un dictionnaire qui contiendra la séquence pseudo-aléatoire créée par la clé RC4 et l'IV s'y rapportant. Il ne connait ni la clé WEP, ni la clé RC4, mais est capable de déchiffrer les paquets sniffés.
+
+	\subsection{Constitution d'un dictionnaire de décryptage}
+	
+		\subsubsection{Fabrication de ses propres requêtes}
+Autre faiblesse du WEP, le hacker peut fabriquer ses propres requêtes, les requêtes ping par exemple. Elles servent à tester l'accessibilité à un autre équipement en demandant un écho. Si un hacker peut envoyer sans arrêt des requêtes il reçoit en retour une quantité de réponses toutes avec un IV différent. Utiliser les requêtes capturées est plutôt inintéressant, car en plus d'être déjà cryptées, elles sont souvent courtes. C'est pourquoi il peut utiliser les requêtes ARP, facilement reconnaissables car elles font toujours 43 octets et dont le contenu est facile à deviner. Elles sont envoyées lorsqu'une station veut connaître l'adresse MAC d'une autre station et n'ayant que son adresse IP.
+
+		\subsubsection{Allongement de  la séquence pseudo-aléatoire}
+Le hacker peut maintenant envoyer des paquets et les crypter tant qu'ils font moins de 43 octets. Pour découvrir les prochains octets, il n'a qu'à rajouter un octet arbitrairement (il y en a 256 possibles) et l'envoyer. Si ce n'est pas le bon, il sera rejeté par le destinataire et il n'aura qu'à recommencer l'envoi jusqu'à l'avoir trouvé et ainsi de suite. Il s'arrêtera lorsque la limite de taille des paquets sur le réseau sera atteinte. Si le tout est automatisé, il peut l'être fait en un minimum de temps.
+
+Son dictionnaire est maintenant constitué, pour chaque taille de paquet, en utilisant l'opération XOR, il déchiffre la séquence pseudo-aléatoire et donc connait l'IV et les séquences s'y rapportant.
+
+Lors de la capture d'un paquet crypté, il suffit de regarder à quel IV celui-ci correspond et il peut déchiffrer le message facilement, le tout sans connaître ni la clé WEP, ni les clés RC4. Il va même pouvoir commencer à générer ses propres paquets, correctement cryptés.
+
+	\subsection{Les clés faibles}
+Un autre défaut est apparu en 2001 lorsque des chercheurs ont découvert un problème dans l'algorithme RC4. Il arrivait que certaines clés RC4 soient considérées comme \og faibles \fg{} car, lors du mélange que la séquence pseudo-aléatoire produit, le début n'avait pas l'air suffisamment aléatoire et avait une grande probabilité de ressembler aux premiers bits de la clé originale. Une solution était de ne plus prendre en compte les 1024 premiers octets des séquences produites et le résultat avait l'air à ce moment là aléatoire.
+
+Actuellement, le WEP ne trie pas les clés faibles, car le début des clés RC4 est formé de l'IV du paquet, suivi de la clé WEP. C'est pourquoi un hacker n'a qu'à sniffer le réseau à la recherche de paquets cryptés avec des clés faibles. L'IV est affiché en clair, il est donc facile de savoir lesquelles sont faibles ou non. Les paquets seront utilisés à travers un algorithme complexe, nommé aircrack-ng, qui sera utilisé plus tard pour découvrir la clé WEP. Seule la taille joue un facteur, une clé de 104 bits prendra plus de temps au programme pour être déchiffrée qu'une de 40 bits. Dès que cette dernière est connue, le hacker a l'accès complet au réseau. Scott Fluhrer, Itsik Mantin et Adi Shamir ont été les premiers à découvrir cette faiblesse et à l'exploiter. Ils ont créé les attaques FMS, nommées ainsi suivant leurs initiales respectives, reposant sur cette faiblesse.
+
+	\subsection{Les faiblesses de l'authentification}
+Le mécanisme d'authentification WEP comporte lui aussi une faille. À l'aide d'une attaque \emph{Man in The Middle}\footnote{L'homme du milieu, aussi abrégé MitM.}, le hacker peut configurer son ordinateur pour se comporter comme un AP et tromper la station pour la faire s'authentifier chez lui plutôt que sur l'AP qu'il souhaite réellement attaquer. Le hacker demande une requête d'authentification et la fait suivre au client qu'il a trompé, qui lui répondra correctement. Le hacker n'a ensuite qu'à rediriger le défi qu'il a reçu en retour et il peut finalement s'authentifier. L'exploitation de cette faille est schématisée ci-dessous.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.6]{images/mitm.png}
+	\caption{Attaque \emph{Man in the Middle} contre l'authentification du WEP}
+\end{figure}
+
+
+Toutefois, bien qu'étant accepté sur le réseau, il ne pourra pas communiquer avec qui que ce soit tant qu'il ne connait pas la clé WEP.
+
+
+
+	\subsection{Les failles du contrôle d'intégrité}
+Les faiblesses de l'ICV vont être présentées. Il repose sur un calcul dit linéaire fait à partir du message non crypté, à l'aide de l'algorithme CRC. Suite à une série de calculs et de modifications de paquets, un pirate informatique est capable de modifier un paquet reçu et de le faire passer pour un paquet original. L'intégrité n'est plus assurée.
+\\
+
+Le WEP contient quantité de faiblesses qui sont toutes potentiellement attaquables. Ses mécanismes de sécurité ont été dépassés, le cryptage, l'authentification et l'intégrité des paquets et donc des données des utilisateurs sont vulnérables. De nos jours, une quantité de programmes gratuits permettant l'exploitation des faiblesses du WEP sont disponibles sur le net pour se faciliter la tâche.
+Même si l'encryptage WEP n'offre pas une protection optimale, il vaut toujours mieux que de ne pas avoir de sécurité du tout, car peu de personnes sont suffisamment connaisseuses pour percer les défenses du WEP. Par contre, un utilisateur sachant que sa protection n'est pas optimale peut surveiller ses gestes et ne pas se compromettre.
+
+
+
+\section{Attaques classiques}
+Dans cette section, les attaques automatisées les plus récentes et les plus performantes vont être présentées. Toutes exploitent les mêmes faiblesses mises en valeur plus haut.
+
+	\subsection{ARP Request Replay Attack}
+Cette attaque est une des manières les plus efficace de générer des IVs à profusion. Son concept est de sniffer un paquet ARP et de le renvoyer au point d'accès en permanence, qui lui le renverra à chaque fois avec un nouvel IV. En accumulant tous ces paquets, il devient possible de déterminer les clés faibles et d'utiliser le programme complexe qui décrypte la clé WEP, expliqué dans la sous-section 3.2.3.
+
+
+	\subsection{Fragmentation Attack}
+L'attaque par fragmentation permet de récupérer un fichier de séquence pseudo-aléatoire. Cette dernière, combinée à un autre programme, permet de créer un paquet qui sera injecté sur le réseau. Le seul besoin de cette attaque est un paquet de données quelconques crypté.
+
+Techniquement, le programme utilise une petite partie d'un paquet et tente de renvoyer des requêtes ARP principalement avec du contenu connu. Si le paquet revient en écho, une plus grande quantité est renvoyée jusqu'à en avoir environ 1500 bits de séquence aléatoire.
+	
+	\subsection{Chopchop Attack}
+Aussi nommée \emph{KoreK Attack} en l'honneur de celui qui a découvert la faiblesse utilisée par cette attaque, cette dernière agit de la même manière que la \emph{Fragmentation Attack}. Elle ne découvre pas la clé WEP mais révèle le message en clair. Cependant, certains AP ne sont pas vulnérables à cette attaque car les paquets envoyés sont trop petits et donc ne sont pas pris en compte.
+
+Cette technique s'utilise grâce à une suite de calculs compliqués, mais les résultats sont quasi similaires à l'attaque précédente. La séquence pseudo-aléatoire sous forme d'un fichier.xor est découverte et est utilisée pour créer un paquet qui sera injecté dans le réseau pour le perturber et générer du trafic.
+
+
+
+

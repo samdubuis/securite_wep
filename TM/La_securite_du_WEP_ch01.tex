@@ -1,0 +1,35 @@
+\chapter{Introduction}
+
+\section{Généralités}
+La sécurité du WiFi, autre nom pour un réseau sans-fil, est un sujet récurrent dans les discussions actuelles. Le WiFi, ayant connu une expansion conséquente lors de cette dernière décennie, a rapidement pris de l'importance et est utilisé par des millions de personnes quotidiennement.
+\\
+			
+Ce Travail de Maturité s'intéresse en détail à une des manières de sécuriser l'accès aux données lorsque l'on se connecte sur un réseau sans-fil. Cette sécurité se nomme l'encryptage WEP. Malheureusement, ce dernier a des faiblesses. Une fois le WiFi décrit en général, le fonctionnement du WEP sera expliqué plus précisément, ainsi que ses faiblesses et les attaques exploitant ces dernières. Pour conclure, une démonstration pratique de la découverte de la clé WEP de mon réseau WiFi est présentée. Elle démontre que les protections du WEP peuvent donc être contournées, offrant l'accès libre au réseau informatique et aux données confidentielles qu'il peut contenir. Un glossaire et une liste d'acronymes se situent dans les annexes du Travail de Maturité pour permettre une meilleure compréhension des notions rédigées.
+			
+\section{Qu'est-ce que le WiFi?}
+Le WiFi, signifiant \emph{Wireless Fidelity}, autrement dit fidélité sans-fil, est devenu un quasi besoin dans les parties les plus développées du monde. Il est principalement utilisé pour permettre aux personnes s'y connectant d'avoir accès à Internet, par l'intermédiaire de bornes WiFi mises à dispositions dans des aéroports, des gares ou des villes. Il peut aussi permettre à plusieurs machines de se connecter entre elles, tels des ordinateurs portables, téléphones cellulaires ou encore des imprimantes.
+
+Les entreprises soucieuses du confort de leurs clients mettront en place des \emph{hotspots}\footnote{Point d'accès sans-fil à Internet ou à des services Web.} qui fournissent l'accès à Internet indépendamment de leur propre réseau.
+
+Finalement, le WiFi a pu se développer grâce à la demande de consommation toujours plus pressante des utilisateurs d'Internet et surtout à son déploiement dans les compagnies. Les principales applications du WiFi sont les réseaux familiaux, les réseaux d'entreprises et les \emph{hotspots}.
+
+\subsection{Le WiFi}
+Le WiFi est un ensemble de protocoles de communication sans-fil qui permet de relier plusieurs machines informatiques entre elles, créant ainsi un réseau, qui leur permettra de communiquer et échanger des données.
+
+Les normes 802.11 de l'IEEE (\emph{Institute of Electrical and Electronics Engineers}), association de professionnels pour le développement de technologie, décrivent les caractéristiques d'un réseau sans-fil. La norme initiale est ratifiée en 1997. Elle a été améliorée à plusieurs reprises par l'IEEE. Ces améliorations sont définies comme étant des amendements au standard initial. Depuis la norme initiale, nous sommes parvenus jusqu'à l'amendement 802.11n en 2009 qui est un des plus récent en passant par l'amendement 802.11i en 2004 qui consistait à ajouter des mécanismes d'identification et de chiffrement des données : le WPA (\emph{WiFi Protection Access}\footnote{Protection de l'accès WiFi}).
+
+Souvent mal utilisé, le mot WiFi définit la marque déposée par la compagnie WiFi Alliance qui répond à la norme 802.11. Le nom de marque et le nom de norme sont donc souvent confondus. Un réseau WiFi est en réalité un réseau répondant à la norme 802.11. Le WiFi devrait être nommé plus justement réseau WLAN (\emph{Wireless LAN, LAN signifiant Local Area Network}\footnote{Réseau local sans-fil}). Ce réseau a un taux de transfert élevé de nos jours, parfois supérieur à une connexion filaire, mais est limité par la portée de signal. Techniquement, la portée standard se limite à 30 mètres à l'intérieur et 100 mètres à l'extérieur d'un bâtiment. De plus, la législation suisse limite également la portée pour ne pas permettre d'abus.
+\\
+
+L'IEEE a donc créé le standard 802.11 pour les réseaux sans-fil, alors que la WiFi Alliance a créé le label définissant les produits 802.11. La confusion entre WiFi - WLAN - 802.11b/i/n... est alors souvent admise.
+
+\subsection{Types d'encryptage}
+Le WiFi a évolué au fil des années et des décennies. La première norme a été introduite aux environs des années 1997-1998. Comprenant le besoin de sécuriser le transfert des données, les ingénieurs de l'IEEE ont mis au point des protocoles de sécurité et les ont inclus dans les normes suivantes, commençant par 802.11b, puis 802.11i, etc \dots
+
+Les différents encryptages sont apparus, commençant par le chiffrement WEP, signifiant \emph{Wired Equivalent Privacy}\footnote{Confidentialité équivalente à celle obtenue sur un câble.}, lors de la ratification de la norme 802.11b, puis le WEP étant considéré comme faible, de nouvelles techniques ont vu le jour, tel le WPA, puis finalement le WPA2, encryptage le plus sûr et le plus répandu actuellement.
+
+
+\section{Dispositions légales}
+La loi suisse contient plusieurs articles sur les délits informatiques tel le hacking, qui consiste en l'accès indu à un système informatique et le cracking, qui lui consiste en la soustraction de données informatiques après avoir passé des protections mises en place. Ces articles sont les numéros 143, 143\textsuperscript{bis} , 144\textsuperscript{bis} et 147. Ils punissent toute personne cherchant à soustraire ou détériorer des données privées, tentant de pénétrer des systèmes informatiques dont elle n'a pas l'accès, ou finalement utilisant de manière frauduleuse un équipement électronique tel un ordinateur. Il est interdit d'en faire un métier. Ces articles sont rédigés dans leur intégralité en annexe.
+
+La réalisation pratique de ce Travail de Maturité implique d'utiliser certaines méthodes considérées illégales. Néanmoins, le sujet de ces attaques étant un réseau personnel et cette intrusion étant approuvée par les "victimes", il tient de l'\emph{ethical hacking\footnote{Réalisation de tests d'intrusion et d'autres méthodes de test afin d'assurer la sécurité des systèmes d'information, ou dans un but éducatif.}}.

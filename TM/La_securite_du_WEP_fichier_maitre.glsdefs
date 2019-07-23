@@ -1,0 +1,2220 @@
+\ifglsentryexists{IEEE}{}%
+{%
+\gls@defglossaryentry{IEEE}%
+{%
+name={IEEE},%
+sort={IEEE},%
+type={main},%
+first={IEEE},%
+firstplural={IEEEs},%
+text={IEEE},%
+plural={IEEEs},%
+description={\emph {Institute of Electrical and Electronics Engineers} - Institut des ingénieurs électriciens et électroniciens, association de professionnels pour le développement de technologies},%
+descriptionplural={\emph {Institute of Electrical and Electronics Engineers} - Institut des ingénieurs électriciens et électroniciens, association de professionnels pour le développement de technologies},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{WiFi}{}%
+{%
+\gls@defglossaryentry{WiFi}%
+{%
+name={WiFi},%
+sort={WiFi},%
+type={main},%
+first={WiFi},%
+firstplural={WiFis},%
+text={WiFi},%
+plural={WiFis},%
+description={\emph {Wireless Fidelity} - Fidélité sans-fil, ensemble de protocoles de communications},%
+descriptionplural={\emph {Wireless Fidelity} - Fidélité sans-fil, ensemble de protocoles de communications},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{reseau}{}%
+{%
+\gls@defglossaryentry{reseau}%
+{%
+name={Réseau informatique},%
+sort={Réseau informatique},%
+type={main},%
+first={R\'eseau informatique},%
+firstplural={R\'eseau informatiques},%
+text={R\'eseau informatique},%
+plural={R\'eseau informatiques},%
+description={Ensemble d'équipements reliés entre eux, permettant de faire circuler des informations, une communication, etc...},%
+descriptionplural={Ensemble d'équipements reliés entre eux, permettant de faire circuler des informations, une communication, etc...},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{encryptage}{}%
+{%
+\gls@defglossaryentry{encryptage}%
+{%
+name={Encryptage},%
+sort={Encryptage},%
+type={main},%
+first={Encryptage},%
+firstplural={Encryptages},%
+text={Encryptage},%
+plural={Encryptages},%
+description={Chiffrement, procédé de cryptographie empêchant la lecture de toute personne n'ayant pas la clé de déchiffrement},%
+descriptionplural={Chiffrement, procédé de cryptographie empêchant la lecture de toute personne n'ayant pas la clé de déchiffrement},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{WEP}{}%
+{%
+\gls@defglossaryentry{WEP}%
+{%
+name={WEP},%
+sort={WEP},%
+type={main},%
+first={WEP},%
+firstplural={WEPs},%
+text={WEP},%
+plural={WEPs},%
+description={\emph {Wired Equivalent Privacy} - Confidentialité équivalente à celle sur une connexion filaire, un encryptage d'un réseau sans-fil},%
+descriptionplural={\emph {Wired Equivalent Privacy} - Confidentialité équivalente à celle sur une connexion filaire, un encryptage d'un réseau sans-fil},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{borne}{}%
+{%
+\gls@defglossaryentry{borne}%
+{%
+name={Borne WiFi},%
+sort={Borne WiFi},%
+type={main},%
+first={Borne WiFi},%
+firstplural={Borne WiFis},%
+text={Borne WiFi},%
+plural={Borne WiFis},%
+description={Matériel donnant l'accès à un réseau sans-fil},%
+descriptionplural={Matériel donnant l'accès à un réseau sans-fil},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hotspot}{}%
+{%
+\gls@defglossaryentry{hotspot}%
+{%
+name={Hotspot},%
+sort={Hotspot},%
+type={main},%
+first={Hotspot},%
+firstplural={Hotspots},%
+text={Hotspot},%
+plural={Hotspots},%
+description={Nom anglais pour un point d'accès sans-fil à Internet ou à des services Web},%
+descriptionplural={Nom anglais pour un point d'accès sans-fil à Internet ou à des services Web},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{internet}{}%
+{%
+\gls@defglossaryentry{internet}%
+{%
+name={Internet},%
+sort={Internet},%
+type={main},%
+first={Internet},%
+firstplural={Internets},%
+text={Internet},%
+plural={Internets},%
+description={Réseau informatique mondial accessible au public},%
+descriptionplural={Réseau informatique mondial accessible au public},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{protocole}{}%
+{%
+\gls@defglossaryentry{protocole}%
+{%
+name={Protocole},%
+sort={Protocole},%
+type={main},%
+first={Protocole},%
+firstplural={Protocoles},%
+text={Protocole},%
+plural={Protocoles},%
+description={Spécification de plusieurs règles pour un type de communication particulier},%
+descriptionplural={Spécification de plusieurs règles pour un type de communication particulier},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{norme}{}%
+{%
+\gls@defglossaryentry{norme}%
+{%
+name={Normes 802.11},%
+sort={Normes 802.11},%
+type={main},%
+first={Normes 802.11},%
+firstplural={Normes 802.11s},%
+text={Normes 802.11},%
+plural={Normes 802.11s},%
+description={Ensemble de caractéristiques concernant les réseaux sans-fil},%
+descriptionplural={Ensemble de caractéristiques concernant les réseaux sans-fil},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{WPA}{}%
+{%
+\gls@defglossaryentry{WPA}%
+{%
+name={WPA},%
+sort={WPA},%
+type={main},%
+first={WPA},%
+firstplural={WPAs},%
+text={WPA},%
+plural={WPAs},%
+description={\emph {WiFi Protected Access} - Accès protégé au WiFi, un encryptage d'un réseau sans-fil},%
+descriptionplural={\emph {WiFi Protected Access} - Accès protégé au WiFi, un encryptage d'un réseau sans-fil},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{lan}{}%
+{%
+\gls@defglossaryentry{lan}%
+{%
+name={LAN},%
+sort={LAN},%
+type={main},%
+first={LAN},%
+firstplural={LANs},%
+text={LAN},%
+plural={LANs},%
+description={\emph {Local Area Network} - Réseau local, réseau informatique qui relie des équipements par connexion filaire dans une zone limitée},%
+descriptionplural={\emph {Local Area Network} - Réseau local, réseau informatique qui relie des équipements par connexion filaire dans une zone limitée},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{wlan}{}%
+{%
+\gls@defglossaryentry{wlan}%
+{%
+name={WLAN},%
+sort={WLAN},%
+type={main},%
+first={WLAN},%
+firstplural={WLANs},%
+text={WLAN},%
+plural={WLANs},%
+description={\emph {Wireless LAN} - Réseau local sans-fil, réseau informatique qui relie des équipements par ondes radios dans une zone limitée},%
+descriptionplural={\emph {Wireless LAN} - Réseau local sans-fil, réseau informatique qui relie des équipements par ondes radios dans une zone limitée},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hack}{}%
+{%
+\gls@defglossaryentry{hack}%
+{%
+name={Hack},%
+sort={Hack},%
+type={main},%
+first={Hack},%
+firstplural={Hacks},%
+text={Hack},%
+plural={Hacks},%
+description={Accès indu à un système informatique},%
+descriptionplural={Accès indu à un système informatique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{crack}{}%
+{%
+\gls@defglossaryentry{crack}%
+{%
+name={Crack},%
+sort={Crack},%
+type={main},%
+first={Crack},%
+firstplural={Cracks},%
+text={Crack},%
+plural={Cracks},%
+description={Soustraction de données informatiques après avoir passé des protections mises en place},%
+descriptionplural={Soustraction de données informatiques après avoir passé des protections mises en place},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ethical}{}%
+{%
+\gls@defglossaryentry{ethical}%
+{%
+name={Ethical hacking},%
+sort={Ethical hacking},%
+type={main},%
+first={Ethical hacking},%
+firstplural={Ethical hackings},%
+text={Ethical hacking},%
+plural={Ethical hackings},%
+description={\emph {Hacking éthique} - Réalisation de tests d'intrusion et d'autres méthodes de test afin d'assurer la sécurité des systèmes d'information, ou dans un but éducatif},%
+descriptionplural={\emph {Hacking éthique} - Réalisation de tests d'intrusion et d'autres méthodes de test afin d'assurer la sécurité des systèmes d'information, ou dans un but éducatif},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mac}{}%
+{%
+\gls@defglossaryentry{mac}%
+{%
+name={Adresse MAC},%
+sort={Adresse MAC},%
+type={main},%
+first={Adresse MAC},%
+firstplural={Adresse MACs},%
+text={Adresse MAC},%
+plural={Adresse MACs},%
+description={Adresse \emph {Media Access Control} - Adresse de contrôle d'accès au support, unique au monde et aussi nommée adresse physique},%
+descriptionplural={Adresse \emph {Media Access Control} - Adresse de contrôle d'accès au support, unique au monde et aussi nommée adresse physique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ip}{}%
+{%
+\gls@defglossaryentry{ip}%
+{%
+name={IP},%
+sort={IP},%
+type={main},%
+first={IP},%
+firstplural={IPs},%
+text={IP},%
+plural={IPs},%
+description={\emph {Internet Protocol} - Famille de protocoles de communication de réseaux informatiques conçus pour être utilisés avec Internet},%
+descriptionplural={\emph {Internet Protocol} - Famille de protocoles de communication de réseaux informatiques conçus pour être utilisés avec Internet},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ARP}{}%
+{%
+\gls@defglossaryentry{ARP}%
+{%
+name={ARP},%
+sort={ARP},%
+type={main},%
+first={ARP},%
+firstplural={ARPs},%
+text={ARP},%
+plural={ARPs},%
+description={\emph {Address Resolution Protocol} - Protocole de résolution d'adresses, effectue la traduction d'une adresse IP en une adresse MAC},%
+descriptionplural={\emph {Address Resolution Protocol} - Protocole de résolution d'adresses, effectue la traduction d'une adresse IP en une adresse MAC},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{paquet}{}%
+{%
+\gls@defglossaryentry{paquet}%
+{%
+name={Paquet},%
+sort={Paquet},%
+type={main},%
+first={Paquet},%
+firstplural={Paquets},%
+text={Paquet},%
+plural={Paquets},%
+description={Entité de transmission de données dans un réseau informatique},%
+descriptionplural={Entité de transmission de données dans un réseau informatique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ap}{}%
+{%
+\gls@defglossaryentry{ap}%
+{%
+name={AP},%
+sort={AP},%
+type={main},%
+first={AP},%
+firstplural={APs},%
+text={AP},%
+plural={APs},%
+description={\emph {Access Point} - Point d'accès},%
+descriptionplural={\emph {Access Point} - Point d'accès},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mode}{}%
+{%
+\gls@defglossaryentry{mode}%
+{%
+name={Mode infrastructure},%
+sort={Mode infrastructure},%
+type={main},%
+first={Mode infrastructure},%
+firstplural={Mode infrastructures},%
+text={Mode infrastructure},%
+plural={Mode infrastructures},%
+description={Mode de fonctionnement d'un réseau qui relie des équipements entre eux en passant par un point d'accès},%
+descriptionplural={Mode de fonctionnement d'un réseau qui relie des équipements entre eux en passant par un point d'accès},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mode2}{}%
+{%
+\gls@defglossaryentry{mode2}%
+{%
+name={Mode ad hoc},%
+sort={Mode ad hoc},%
+type={main},%
+first={Mode ad hoc},%
+firstplural={Mode ad hocs},%
+text={Mode ad hoc},%
+plural={Mode ad hocs},%
+description={Mode de fonctionnement d'un réseau qui relie des équipements directement entre eux},%
+descriptionplural={Mode de fonctionnement d'un réseau qui relie des équipements directement entre eux},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mode3}{}%
+{%
+\gls@defglossaryentry{mode3}%
+{%
+name={Mode moniteur},%
+sort={Mode moniteur},%
+type={main},%
+first={Mode moniteur},%
+firstplural={Mode moniteurs},%
+text={Mode moniteur},%
+plural={Mode moniteurs},%
+description={Mode de fonctionnement utilisé par un ordinateur équipé d'une carte WiFi, permet l'écoute et la capture de paquets sans connexion à un réseau},%
+descriptionplural={Mode de fonctionnement utilisé par un ordinateur équipé d'une carte WiFi, permet l'écoute et la capture de paquets sans connexion à un réseau},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{carte}{}%
+{%
+\gls@defglossaryentry{carte}%
+{%
+name={Carte réseau},%
+sort={Carte réseau},%
+type={main},%
+first={Carte r\'eseau},%
+firstplural={Carte r\'eseaus},%
+text={Carte r\'eseau},%
+plural={Carte r\'eseaus},%
+description={Équipement informatique assurant l'interface entre la machine sur laquelle la carte est montée et les autres équipements du réseau sur lequel elle est connectée},%
+descriptionplural={Équipement informatique assurant l'interface entre la machine sur laquelle la carte est montée et les autres équipements du réseau sur lequel elle est connectée},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{broadcast}{}%
+{%
+\gls@defglossaryentry{broadcast}%
+{%
+name={Broadcast},%
+sort={Broadcast},%
+type={main},%
+first={Broadcast},%
+firstplural={Broadcasts},%
+text={Broadcast},%
+plural={Broadcasts},%
+description={Diffusion de données à tous les utilisateurs d'un réseau},%
+descriptionplural={Diffusion de données à tous les utilisateurs d'un réseau},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{multicast}{}%
+{%
+\gls@defglossaryentry{multicast}%
+{%
+name={Multicast},%
+sort={Multicast},%
+type={main},%
+first={Multicast},%
+firstplural={Multicasts},%
+text={Multicast},%
+plural={Multicasts},%
+description={Diffusion de données à plusieurs utilisateurs définis d'un réseau},%
+descriptionplural={Diffusion de données à plusieurs utilisateurs définis d'un réseau},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{unicast}{}%
+{%
+\gls@defglossaryentry{unicast}%
+{%
+name={Unicast},%
+sort={Unicast},%
+type={main},%
+first={Unicast},%
+firstplural={Unicasts},%
+text={Unicast},%
+plural={Unicasts},%
+description={Diffusion de données à un utilisateur d'un réseau},%
+descriptionplural={Diffusion de données à un utilisateur d'un réseau},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{trafic}{}%
+{%
+\gls@defglossaryentry{trafic}%
+{%
+name={Trafic},%
+sort={Trafic},%
+type={main},%
+first={Trafic},%
+firstplural={Trafics},%
+text={Trafic},%
+plural={Trafics},%
+description={Circulation de données sur un réseau informatique},%
+descriptionplural={Circulation de données sur un réseau informatique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{station}{}%
+{%
+\gls@defglossaryentry{station}%
+{%
+name={Station},%
+sort={Station},%
+type={main},%
+first={Station},%
+firstplural={Stations},%
+text={Station},%
+plural={Stations},%
+description={Équipement informatique connecté à un réseau, synonyme de client},%
+descriptionplural={Équipement informatique connecté à un réseau, synonyme de client},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{client}{}%
+{%
+\gls@defglossaryentry{client}%
+{%
+name={Client},%
+sort={Client},%
+type={main},%
+first={Client},%
+firstplural={Clients},%
+text={Client},%
+plural={Clients},%
+description={Équipement informatique connecté à un réseau, synonyme de station},%
+descriptionplural={Équipement informatique connecté à un réseau, synonyme de station},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{BSS}{}%
+{%
+\gls@defglossaryentry{BSS}%
+{%
+name={BSS},%
+sort={BSS},%
+type={main},%
+first={BSS},%
+firstplural={BSSs},%
+text={BSS},%
+plural={BSSs},%
+description={\emph {Basic Service Set} - Ensemble de services de base},%
+descriptionplural={\emph {Basic Service Set} - Ensemble de services de base},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bssid}{}%
+{%
+\gls@defglossaryentry{bssid}%
+{%
+name={BSSID},%
+sort={BSSID},%
+type={main},%
+first={BSSID},%
+firstplural={BSSIDs},%
+text={BSSID},%
+plural={BSSIDs},%
+description={Élément d'un BSS identifié par son ID},%
+descriptionplural={Élément d'un BSS identifié par son ID},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{id}{}%
+{%
+\gls@defglossaryentry{id}%
+{%
+name={ID},%
+sort={ID},%
+type={main},%
+first={ID},%
+firstplural={IDs},%
+text={ID},%
+plural={IDs},%
+description={Acronyme de \emph {Identity}, anglais pour identité},%
+descriptionplural={Acronyme de \emph {Identity}, anglais pour identité},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ess}{}%
+{%
+\gls@defglossaryentry{ess}%
+{%
+name={ESS},%
+sort={ESS},%
+type={main},%
+first={ESS},%
+firstplural={ESSs},%
+text={ESS},%
+plural={ESSs},%
+description={\emph {Extended Service Set} - Ensemble de services étendu},%
+descriptionplural={\emph {Extended Service Set} - Ensemble de services étendu},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{essid}{}%
+{%
+\gls@defglossaryentry{essid}%
+{%
+name={ESSID},%
+sort={ESSID},%
+type={main},%
+first={ESSID},%
+firstplural={ESSIDs},%
+text={ESSID},%
+plural={ESSIDs},%
+description={Identifiant du réseau dans globalité donné par l'administrateur},%
+descriptionplural={Identifiant du réseau dans globalité donné par l'administrateur},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{beacon}{}%
+{%
+\gls@defglossaryentry{beacon}%
+{%
+name={Trame balise},%
+sort={Trame balise},%
+type={main},%
+first={Trame balise},%
+firstplural={Trame balises},%
+text={Trame balise},%
+plural={Trame balises},%
+description={Information régulièrement envoyée par un point d'accès sur son BSSID, ESSID et ses caractéristiques},%
+descriptionplural={Information régulièrement envoyée par un point d'accès sur son BSSID, ESSID et ses caractéristiques},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{logiciel}{}%
+{%
+\gls@defglossaryentry{logiciel}%
+{%
+name={Logiciel},%
+sort={Logiciel},%
+type={main},%
+first={Logiciel},%
+firstplural={Logiciels},%
+text={Logiciel},%
+plural={Logiciels},%
+description={Programme informatique ,ensemble de données d'instructions interprétables par la machine},%
+descriptionplural={Programme informatique ,ensemble de données d'instructions interprétables par la machine},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{integrite}{}%
+{%
+\gls@defglossaryentry{integrite}%
+{%
+name={Intégrité},%
+sort={Intégrité},%
+type={main},%
+first={Int\'egrit\'e},%
+firstplural={Int\'egrit\'es},%
+text={Int\'egrit\'e},%
+plural={Int\'egrit\'es},%
+description={Affirmation que les données transmises n'ont pas été modifiées},%
+descriptionplural={Affirmation que les données transmises n'ont pas été modifiées},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{authentification}{}%
+{%
+\gls@defglossaryentry{authentification}%
+{%
+name={Authentification},%
+sort={Authentification},%
+type={main},%
+first={Authentification},%
+firstplural={Authentifications},%
+text={Authentification},%
+plural={Authentifications},%
+description={Vérification de l'identité d'un ordinateur afin d'autoriser l'accès de cette entité au réseau},%
+descriptionplural={Vérification de l'identité d'un ordinateur afin d'autoriser l'accès de cette entité au réseau},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nonrepudiation}{}%
+{%
+\gls@defglossaryentry{nonrepudiation}%
+{%
+name={Non-répudiation},%
+sort={Non-répudiation},%
+type={main},%
+first={Non-r\'epudiation},%
+firstplural={Non-r\'epudiations},%
+text={Non-r\'epudiation},%
+plural={Non-r\'epudiations},%
+description={Assurance que l'information transmise n'est pas remise en cause ni par l'expéditeur ni le destinataire},%
+descriptionplural={Assurance que l'information transmise n'est pas remise en cause ni par l'expéditeur ni le destinataire},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{xor}{}%
+{%
+\gls@defglossaryentry{xor}%
+{%
+name={Opération XOR},%
+sort={Opération XOR},%
+type={main},%
+first={Op\'eration XOR},%
+firstplural={Op\'eration XORs},%
+text={Op\'eration XOR},%
+plural={Op\'eration XORs},%
+description={Opération ou exclusif, se comportant comme une addition binaire},%
+descriptionplural={Opération ou exclusif, se comportant comme une addition binaire},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bits}{}%
+{%
+\gls@defglossaryentry{bits}%
+{%
+name={Bit},%
+sort={Bit},%
+type={main},%
+first={Bit},%
+firstplural={Bits},%
+text={Bit},%
+plural={Bits},%
+description={Unité ne pouvant prendre que deux valeurs binaires : 0 et 1, unité de mesure d'espace informatique comme la mémoire par exemple},%
+descriptionplural={Unité ne pouvant prendre que deux valeurs binaires : 0 et 1, unité de mesure d'espace informatique comme la mémoire par exemple},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{octet}{}%
+{%
+\gls@defglossaryentry{octet}%
+{%
+name={Octet},%
+sort={Octet},%
+type={main},%
+first={Octet},%
+firstplural={Octets},%
+text={Octet},%
+plural={Octets},%
+description={Regroupement de 8 bits},%
+descriptionplural={Regroupement de 8 bits},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nonce}{}%
+{%
+\gls@defglossaryentry{nonce}%
+{%
+name={Nonce},%
+sort={Nonce},%
+type={main},%
+first={Nonce},%
+firstplural={Nonces},%
+text={Nonce},%
+plural={Nonces},%
+description={Autre nom pour un IV},%
+descriptionplural={Autre nom pour un IV},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{iv}{}%
+{%
+\gls@defglossaryentry{iv}%
+{%
+name={IV},%
+sort={IV},%
+type={main},%
+first={IV},%
+firstplural={IVs},%
+text={IV},%
+plural={IVs},%
+description={\emph {Initialization Vector} - Vecteur d'initialisation, bloc de 24 bits sensé être unique et placé à l'avant de la clé fixe dans un paquet},%
+descriptionplural={\emph {Initialization Vector} - Vecteur d'initialisation, bloc de 24 bits sensé être unique et placé à l'avant de la clé fixe dans un paquet},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{crc}{}%
+{%
+\gls@defglossaryentry{crc}%
+{%
+name={CRC},%
+sort={CRC},%
+type={main},%
+first={CRC},%
+firstplural={CRCs},%
+text={CRC},%
+plural={CRCs},%
+description={Code de redondance cyclique, forme un résumé qui se situe après le message dans un paquet},%
+descriptionplural={Code de redondance cyclique, forme un résumé qui se situe après le message dans un paquet},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{icv}{}%
+{%
+\gls@defglossaryentry{icv}%
+{%
+name={ICV},%
+sort={ICV},%
+type={main},%
+first={ICV},%
+firstplural={ICVs},%
+text={ICV},%
+plural={ICVs},%
+description={\emph {Integrity Check Value} - Valeur du contrôle d'intégrité, similaire au CRC, calculé après le cryptage du paquet et rajouté à la fin},%
+descriptionplural={\emph {Integrity Check Value} - Valeur du contrôle d'intégrité, similaire au CRC, calculé après le cryptage du paquet et rajouté à la fin},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sniff}{}%
+{%
+\gls@defglossaryentry{sniff}%
+{%
+name={Sniffer},%
+sort={Sniffer},%
+type={main},%
+first={Sniffer},%
+firstplural={Sniffers},%
+text={Sniffer},%
+plural={Sniffers},%
+description={Capture de paquets réseaux},%
+descriptionplural={Capture de paquets réseaux},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{requestarp}{}%
+{%
+\gls@defglossaryentry{requestarp}%
+{%
+name={Requête ARP},%
+sort={Requête ARP},%
+type={main},%
+first={Requ\^ete ARP},%
+firstplural={Requ\^ete ARPs},%
+text={Requ\^ete ARP},%
+plural={Requ\^ete ARPs},%
+description={Demande d'une machine à une autre pour déterminer l'adresse MAC à partir de l'adresse IP},%
+descriptionplural={Demande d'une machine à une autre pour déterminer l'adresse MAC à partir de l'adresse IP},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{requestping}{}%
+{%
+\gls@defglossaryentry{requestping}%
+{%
+name={Requête ping},%
+sort={Requête ping},%
+type={main},%
+first={Requ\^ete ping},%
+firstplural={Requ\^ete pings},%
+text={Requ\^ete ping},%
+plural={Requ\^ete pings},%
+description={Déterminent l'accessibilité d'un équipement en faisant une demande et attendant un écho},%
+descriptionplural={Déterminent l'accessibilité d'un équipement en faisant une demande et attendant un écho},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{fms}{}%
+{%
+\gls@defglossaryentry{fms}%
+{%
+name={Attaques FMS},%
+sort={Attaques FMS},%
+type={main},%
+first={Attaques FMS},%
+firstplural={Attaques FMSs},%
+text={Attaques FMS},%
+plural={Attaques FMSs},%
+description={Attaques exploitant les clés faibles du WEP, nommées suivant les initiales de leur créateurs},%
+descriptionplural={Attaques exploitant les clés faibles du WEP, nommées suivant les initiales de leur créateurs},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mitm}{}%
+{%
+\gls@defglossaryentry{mitm}%
+{%
+name={MITM},%
+sort={MITM},%
+type={main},%
+first={MITM},%
+firstplural={MITMs},%
+text={MITM},%
+plural={MITMs},%
+description={\emph {Man in the Middle} - L'homme du milieu, type d'attaque où le hacker se fait passer pour un point d'accès},%
+descriptionplural={\emph {Man in the Middle} - L'homme du milieu, type d'attaque où le hacker se fait passer pour un point d'accès},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{penetrationtest}{}%
+{%
+\gls@defglossaryentry{penetrationtest}%
+{%
+name={Penetration Testing},%
+sort={Penetration Testing},%
+type={main},%
+first={Penetration Testing},%
+firstplural={Penetration Testings},%
+text={Penetration Testing},%
+plural={Penetration Testings},%
+description={Test de sécurité d'un système informatique},%
+descriptionplural={Test de sécurité d'un système informatique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{opensource}{}%
+{%
+\gls@defglossaryentry{opensource}%
+{%
+name={Open-source},%
+sort={Open-source},%
+type={main},%
+first={Open-source},%
+firstplural={Open-sources},%
+text={Open-source},%
+plural={Open-sources},%
+description={Littéralement code source ouvert, détermine les programmes et distributions libres d'accès et gratuites},%
+descriptionplural={Littéralement code source ouvert, détermine les programmes et distributions libres d'accès et gratuites},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kali}{}%
+{%
+\gls@defglossaryentry{kali}%
+{%
+name={Kali-Linux},%
+sort={Kali-Linux},%
+type={main},%
+first={Kali-Linux},%
+firstplural={Kali-Linuxs},%
+text={Kali-Linux},%
+plural={Kali-Linuxs},%
+description={Distribution Linux de pentesting, suite de Backtrack},%
+descriptionplural={Distribution Linux de pentesting, suite de Backtrack},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{backtrack}{}%
+{%
+\gls@defglossaryentry{backtrack}%
+{%
+name={Backtrack},%
+sort={Backtrack},%
+type={main},%
+first={Backtrack},%
+firstplural={Backtracks},%
+text={Backtrack},%
+plural={Backtracks},%
+description={Distribution Linux, une nouvelle version est sortie à ce jour et se nomme Kali-Linux},%
+descriptionplural={Distribution Linux, une nouvelle version est sortie à ce jour et se nomme Kali-Linux},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{liveboot}{}%
+{%
+\gls@defglossaryentry{liveboot}%
+{%
+name={Live Boot},%
+sort={Live Boot},%
+type={main},%
+first={Live Boot},%
+firstplural={Live Boots},%
+text={Live Boot},%
+plural={Live Boots},%
+description={Lancement direct},%
+descriptionplural={Lancement direct},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{partition}{}%
+{%
+\gls@defglossaryentry{partition}%
+{%
+name={Partition},%
+sort={Partition},%
+type={main},%
+first={Partition},%
+firstplural={Partitions},%
+text={Partition},%
+plural={Partitions},%
+description={Partie d'un disque dur destinée à accueillir des fichiers et données},%
+descriptionplural={Partie d'un disque dur destinée à accueillir des fichiers et données},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{modem}{}%
+{%
+\gls@defglossaryentry{modem}%
+{%
+name={Modem},%
+sort={Modem},%
+type={main},%
+first={Modem},%
+firstplural={Modems},%
+text={Modem},%
+plural={Modems},%
+description={Périphérique servant à communiquer avec des utilisateurs par l'intermédiaire d'un réseau analogique comme une ligne téléphonique},%
+descriptionplural={Périphérique servant à communiquer avec des utilisateurs par l'intermédiaire d'un réseau analogique comme une ligne téléphonique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hub}{}%
+{%
+\gls@defglossaryentry{hub}%
+{%
+name={Hub},%
+sort={Hub},%
+type={main},%
+first={Hub},%
+firstplural={Hubs},%
+text={Hub},%
+plural={Hubs},%
+description={Équipement permettant d'inter-connecter plusieurs appareils informatiques},%
+descriptionplural={Équipement permettant d'inter-connecter plusieurs appareils informatiques},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{terminal}{}%
+{%
+\gls@defglossaryentry{terminal}%
+{%
+name={Terminal},%
+sort={Terminal},%
+type={main},%
+first={Terminal},%
+firstplural={Terminals},%
+text={Terminal},%
+plural={Terminals},%
+description={Synonyme de console, programme servant à diriger un ordinateur par lignes de commande},%
+descriptionplural={Synonyme de console, programme servant à diriger un ordinateur par lignes de commande},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ligne de commande}{}%
+{%
+\gls@defglossaryentry{ligne de commande}%
+{%
+name={Ligne de commande},%
+sort={Ligne de commande},%
+type={main},%
+first={Ligne de commande},%
+firstplural={Ligne de commandes},%
+text={Ligne de commande},%
+plural={Ligne de commandes},%
+description={Texte rentré dans un terminal servant à diriger un ordinateur},%
+descriptionplural={Texte rentré dans un terminal servant à diriger un ordinateur},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{interface}{}%
+{%
+\gls@defglossaryentry{interface}%
+{%
+name={Interface réseau},%
+sort={Interface réseau},%
+type={main},%
+first={Interface r\'eseau},%
+firstplural={Interface r\'eseaus},%
+text={Interface r\'eseau},%
+plural={Interface r\'eseaus},%
+description={Synonyme de carte réseau, aussi ce qui assure la connexion entre la machine et le réseau},%
+descriptionplural={Synonyme de carte réseau, aussi ce qui assure la connexion entre la machine et le réseau},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{canal}{}%
+{%
+\gls@defglossaryentry{canal}%
+{%
+name={Canal},%
+sort={Canal},%
+type={main},%
+first={Canal},%
+firstplural={Canals},%
+text={Canal},%
+plural={Canals},%
+description={Média de transmission reliant la source au destinataire},%
+descriptionplural={Média de transmission reliant la source au destinataire},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ascii}{}%
+{%
+\gls@defglossaryentry{ascii}%
+{%
+name={ASCII},%
+sort={ASCII},%
+type={main},%
+first={ASCII},%
+firstplural={ASCIIs},%
+text={ASCII},%
+plural={ASCIIs},%
+description={\emph {American Standard Code for Information Interchange} - Code américain normalisé pour l'échange d'information), norme de codage de caractère},%
+descriptionplural={\emph {American Standard Code for Information Interchange} - Code américain normalisé pour l'échange d'information), norme de codage de caractère},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{processus}{}%
+{%
+\gls@defglossaryentry{processus}%
+{%
+name={Processus},%
+sort={Processus},%
+type={main},%
+first={Processus},%
+firstplural={Processuss},%
+text={Processus},%
+plural={Processuss},%
+description={Tâche en exécution sur un ordinateur},%
+descriptionplural={Tâche en exécution sur un ordinateur},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{port}{}%
+{%
+\gls@defglossaryentry{port}%
+{%
+name={Port},%
+sort={Port},%
+type={main},%
+first={Port},%
+firstplural={Ports},%
+text={Port},%
+plural={Ports},%
+description={Entrées ouvertes par des programmes pour communiquer avec le système d'exploitation},%
+descriptionplural={Entrées ouvertes par des programmes pour communiquer avec le système d'exploitation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{exploit}{}%
+{%
+\gls@defglossaryentry{exploit}%
+{%
+name={Exploit},%
+sort={Exploit},%
+type={main},%
+first={Exploit},%
+firstplural={Exploits},%
+text={Exploit},%
+plural={Exploits},%
+description={Un élément de programme permettant à un individu ou un logiciel malveillant d'exploiter une faille de sécurité informatique},%
+descriptionplural={Un élément de programme permettant à un individu ou un logiciel malveillant d'exploiter une faille de sécurité informatique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dos}{}%
+{%
+\gls@defglossaryentry{dos}%
+{%
+name={DOS},%
+sort={DOS},%
+type={main},%
+first={DOS},%
+firstplural={DOSs},%
+text={DOS},%
+plural={DOSs},%
+description={\emph {Deny Of Service} - Déni de Service, attaque ayant pour but de rendre un réseau indisponible},%
+descriptionplural={\emph {Deny Of Service} - Déni de Service, attaque ayant pour but de rendre un réseau indisponible},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bandepassante}{}%
+{%
+\gls@defglossaryentry{bandepassante}%
+{%
+name={Bande passante},%
+sort={Bande passante},%
+type={main},%
+first={Bande passante},%
+firstplural={Bande passantes},%
+text={Bande passante},%
+plural={Bande passantes},%
+description={Désigne le débit binaire maximal d'un canal de communication},%
+descriptionplural={Désigne le débit binaire maximal d'un canal de communication},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{backdoor}{}%
+{%
+\gls@defglossaryentry{backdoor}%
+{%
+name={Backdoor},%
+sort={Backdoor},%
+type={main},%
+first={Backdoor},%
+firstplural={Backdoors},%
+text={Backdoor},%
+plural={Backdoors},%
+description={Littéralement porte de derrière, fonctionnalité inconnue de la victime donnant accès au système d'exploitation au hacker},%
+descriptionplural={Littéralement porte de derrière, fonctionnalité inconnue de la victime donnant accès au système d'exploitation au hacker},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{weak}{}%
+{%
+\gls@defglossaryentry{weak}%
+{%
+name={Weak Encryption Protocol},%
+sort={Weak Encryption Protocol},%
+type={main},%
+first={Weak Encryption Protocol},%
+firstplural={Weak Encryption Protocols},%
+text={Weak Encryption Protocol},%
+plural={Weak Encryption Protocols},%
+description={Protocole d'encryptage faible},%
+descriptionplural={Protocole d'encryptage faible},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{linux}{}%
+{%
+\gls@defglossaryentry{linux}%
+{%
+name={Linux},%
+sort={Linux},%
+type={main},%
+first={Linux},%
+firstplural={Linuxs},%
+text={Linux},%
+plural={Linuxs},%
+description={Système d'opération libre},%
+descriptionplural={Système d'opération libre},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

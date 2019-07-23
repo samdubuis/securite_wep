@@ -1,0 +1,81 @@
+\chapter{Contexte technologique}
+Afin de mieux comprendre la théorie relative au WEP et son fonctionnement, ce chapitre est dédié au réseau informatique. Après une explication globale de ses spécificités, le LAN et le Wireless LAN seront différenciés, et pour finir le WLAN sera expliqué plus en profondeur, ce dernier concernant spécifiquement mon Travail de Maturité.
+
+\section{Réseau informatique}
+Un réseau est un ensemble d'équipements inter-connectés entre eux. Il permet de faire circuler des informations, partager des ressources et encore permettre une communication entre machines.
+
+La communication se fait grâce à leur carte réseau, qui permet d'envoyer et recevoir des informations conformément à des protocoles. Chaque carte réseau possède sa propre adresse MAC (\emph{Media Access Control}), unique au monde. Aussi nommée Adresse Physique, elle est attribuée par l'IEEE.
+
+		\subsubsection{Communication et protocoles}
+Les protocoles de communication définissent de façon formelle la manière dont les informations sont échangées entre les équipements du réseau. Ils sont gérés par des programmes installés sur les équipements gérant l'interconnexion. Le protocole IP permet l'acheminement des paquets jusqu'à sa destination. Acronyme de Internet Protocol, il se compose de plusieurs protocoles de communication utilisés par Internet. Ces protocoles ne se soucient pas du contenu de leur paquet, mais assurent au mieux l'acheminement des paquets jusqu'à leur destinataire.
+
+Un autre protocole très répandu est l'ARP, \emph{Address Resolution Protocol}, signifiant protocole de résolution d'adresses. Ce protocole effectue la traduction d'une adresse de type IP en une adresse MAC. Des requêtes ARP se font entre des ordinateurs par exemple, pour que le protocole puisse déterminer l'adresse MAC à instaurer dans l'en-tête d'un paquet, depuis une adresse IP.
+\\
+
+La communication se fait sous forme de transfert de paquets. Il en existe de plusieurs formes et tailles. Un message envoyé d'une machine à une autre sur un réseau est découpé en plusieurs paquets qui sont transmis séparément. Ils sont toujours constitué d'un en-tête spécifiant le type du paquet permettant de le diriger et d'un corps contenant l'information.
+
+		\subsubsection{Modes de fonctionnement}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=\textwidth]{images/mode_fonctionnement.png}
+	\caption{Mode infrastructure et ad hoc}
+\end{figure}
+
+
+Il existe différents modes pour configurer un réseau (figure 2.1 au dessus). Le premier, le mode \og infrastructure \fg est un mode de fonctionnement qui permet aux équipements de se relier entre eux en passant par un point d'accès. Ces points d'accès sont aussi nommés AP, \emph{Access Point} en anglais.
+
+Le deuxième mode, le mode \og ad hoc \fg est lui un mode de fonctionnement qui permet à des équipements de se relier entre eux directement, sans passer par un tiers comme un point d'accès. Au minimum deux équipements informatiques sont nécessaires pour créer un réseau ad hoc. 
+
+
+		\subsubsection{Mode moniteur}
+Le mode \og moniteur \fg est différent des modes infrastructure et ad hoc. Utilisé lors de la partie pratique de mon Travail de Maturité, le mode moniteur est utilisé par un ordinateur équipé d'une carte WiFi. Le monitoring permet à l'ordinateur d'écouter (voir) tout le trafic des paquets d'un réseau sans-fil et de l'intercepter. Il permet la capture sans avoir besoin d'être connecté sur le point d'accès ou sur le réseau \og ad hoc \fg{}.
+\\
+		\subsubsection{Broadcast, multicast, unicast}
+Les notions de \emph{broadcast}, \emph{multicast} et \emph{unicast} définissent les méthodes de diffusion utilisées sur le réseau. Le broadcast est la diffusion de données à tous les utilisateurs, le multicast à plusieurs utilisateurs choisis et l'unicast à un seul utilisateur.
+
+
+\section{Réseaux LAN et WLAN}
+Il existe plusieurs types de réseau. Le LAN, \emph{Local Area Network} ou réseau local et le WLAN, \emph{Wireless LAN} ou réseau local sans-fil, sont parmi les plus répandus. La différence principale entre les deux est leur moyen de connexion et de communication. Le réseau LAN utilise une connexion filaire alors que le WLAN comme son nom l'indique utilise des ondes radios émises à partir d'une antenne jusqu'à un récepteur.
+\\
+
+Le WEP étant un système de sécurité concernant les réseaux sans-fil, certaines spécificités du WLAN vont être approfondies.
+
+
+		\subsubsection{Formation d'un réseau}
+
+\begin{figure}[h!btp]
+	\centering
+	\includegraphics[scale=0.48]{images/formation_reseau.png}
+	\caption{Formation d'un réseau}
+\end{figure}
+
+En mode infrastructure, chaque client ou station, se connecte à un point d'accès. Le tout forme un ensemble de services de base, \emph{Basic Service Set} en anglais, noté BSS. Chaque élément d'un BSS est identifié par un BSSID, qui correspond à l'adresse MAC. Un ESS, \emph{Extended Service Set} signifiant ensemble étendu de services, est un rassemblement de plusieurs BSS. L'ESSID, nommé par l'administrateur, est l'identifiant du réseau dans sa globalité. Le schéma ci-dessus résume ces situations. La communication avec le point d'accès se fait avec des trames balises (\emph{beacon} en anglais). Ces dernières sont diffusées régulièrement par l'AP, donnant des informations sur son BSSID et ESSID et ses caractéristiques. Une station faisant une requête de sondage et sachant sur quel BSSID elle est configurée pourra trouver le point d'accès.
+
+		\subsubsection{Antennes}
+La portée est d'environ 30 à 100 mètres. Les antennes émettrices et réceptrices peuvent être modifiées pour permettre une portée de plusieurs kilomètres non pas sur des zones vastes mais plutôt dans des directions précises.
+ 
+
+
+\section{Protection}
+Lors d'une connexion à un réseau informatique, on s'attend à ce que nos données soient protégées. Les administrateurs réseau s'engagent à fournir une sécurité optimale sur le réseau. Un client connecté peut donc s'attendre à la mise en place de certains aspects sécuritaires. 
+
+		\paragraph{L'intégrité}
+L'intégrité est l'assurance que les informations envoyées ou reçues sont correctes et non modifiées ou compromises. 
+
+		\paragraph{La disponibilité}
+Une disponibilité au réseau est aussi importante, car les besoins des clients sont prioritaires. Un pirate informatique peut compromettre un réseau simplement en empêchant tout transfert de données. 
+	
+		\paragraph{L'authentification}
+Lorsqu'un client veut se connecter sur un réseau, il doit se présenter, s'authentifier. Pour cela, le client peut répondre à un défi, ou mettre à disposition des informations qu'il connait. Si celles-ci sont correctes, le client est autorisé.
+		
+		\paragraph{La non-répudiation}
+La non-répudiation est le fait de s'assurer que l'information transmise n'est pas remise en cause principalement par l'envoyeur ou le destinataire.
+		
+		\paragraph{La confidentialité}
+Finalement, la confidentialité doit être définie. Les données transitant sur un réseau ne doivent pas être visibles, ni compréhensibles aux yeux des autres personnes connectées sur ce dernier.
+\\
+
+Si ces aspects sont réunis, le niveau de protection du réseau est des plus optimales.
+
+
+

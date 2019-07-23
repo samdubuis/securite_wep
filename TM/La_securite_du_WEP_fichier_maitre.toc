@@ -1,0 +1,75 @@
+\babel@toc {french}{}
+\contentsline {chapter}{R\'esum\'e}{}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}G\'en\'eralit\'es}{1}
+\contentsline {section}{\numberline {1.2}Qu'est-ce que le WiFi?}{1}
+\contentsline {subsection}{\numberline {1.2.1}Le WiFi}{1}
+\contentsline {subsection}{\numberline {1.2.2}Types d'encryptage}{2}
+\contentsline {section}{\numberline {1.3}Dispositions l\'egales}{2}
+\contentsline {chapter}{\numberline {2}Contexte technologique}{3}
+\contentsline {section}{\numberline {2.1}R\'eseau informatique}{3}
+\contentsline {subsubsection}{Communication et protocoles}{3}
+\contentsline {subsubsection}{Modes de fonctionnement}{3}
+\contentsline {subsubsection}{Mode moniteur}{4}
+\contentsline {subsubsection}{Broadcast, multicast, unicast}{4}
+\contentsline {section}{\numberline {2.2}R\'eseaux LAN et WLAN}{4}
+\contentsline {subsubsection}{Formation d'un r\'eseau}{4}
+\contentsline {subsubsection}{Antennes}{5}
+\contentsline {section}{\numberline {2.3}Protection}{5}
+\contentsline {paragraph}{L'int\'egrit\'e}{5}
+\contentsline {paragraph}{La disponibilit\'e}{5}
+\contentsline {paragraph}{L'authentification}{5}
+\contentsline {paragraph}{La non-r\'epudiation}{5}
+\contentsline {paragraph}{La confidentialit\'e}{5}
+\contentsline {chapter}{\numberline {3}Le WEP}{7}
+\contentsline {section}{\numberline {3.1}Caract\'eristiques}{7}
+\contentsline {subsection}{\numberline {3.1.1}Les cl\'es WEP}{7}
+\contentsline {subsection}{\numberline {3.1.2}Le fonctionnement du WEP}{8}
+\contentsline {subsubsection}{La cl\'e RC4 et l'op\'eration XOR}{8}
+\contentsline {subsubsection}{Le vecteur d'initialisation et le contr\^ole d'int\'egrit\'e}{9}
+\contentsline {subsubsection}{L'authentification WEP}{10}
+\contentsline {section}{\numberline {3.2}Faiblesses et attaques}{10}
+\contentsline {subsection}{\numberline {3.2.1}La r\'ep\'etition des cl\'es RC4}{10}
+\contentsline {subsection}{\numberline {3.2.2}Constitution d'un dictionnaire de d\'ecryptage}{10}
+\contentsline {subsubsection}{Fabrication de ses propres requ\^etes}{10}
+\contentsline {subsubsection}{Allongement de la s\'equence pseudo-al\'eatoire}{10}
+\contentsline {subsection}{\numberline {3.2.3}Les cl\'es faibles}{11}
+\contentsline {subsection}{\numberline {3.2.4}Les faiblesses de l'authentification}{11}
+\contentsline {subsection}{\numberline {3.2.5}Les failles du contr\^ole d'int\'egrit\'e}{11}
+\contentsline {section}{\numberline {3.3}Attaques classiques}{12}
+\contentsline {subsection}{\numberline {3.3.1}ARP Request Replay Attack}{12}
+\contentsline {subsection}{\numberline {3.3.2}Fragmentation Attack}{12}
+\contentsline {subsection}{\numberline {3.3.3}Chopchop Attack}{12}
+\contentsline {chapter}{\numberline {4}Crack d'un r\'eseau WEP}{13}
+\contentsline {section}{\numberline {4.1}Plateforme de test}{13}
+\contentsline {section}{\numberline {4.2}Logiciels et lignes de code}{14}
+\contentsline {paragraph}{airmon-ng}{14}
+\contentsline {paragraph}{airodump-ng}{14}
+\contentsline {paragraph}{aireplay-ng}{14}
+\contentsline {paragraph}{packetforge-ng}{14}
+\contentsline {paragraph}{aircrack-ng}{14}
+\contentsline {section}{\numberline {4.3}Tentatives}{14}
+\contentsline {subsection}{\numberline {4.3.1}Attaque WEP avec client connect\'e}{15}
+\contentsline {subsubsection}{Mise en route du mode moniteur}{15}
+\contentsline {subsubsection}{\'Ecoute du r\'eseau, \FB@og sniffing \FB@fg \relax {} }{15}
+\contentsline {subsubsection}{Fausse authentification et d\'ecuplement des paquets}{15}
+\contentsline {subsubsection}{Crack de la cl\'e WEP}{16}
+\contentsline {subsection}{\numberline {4.3.2}Attaque WEP sans client connect\'e}{16}
+\contentsline {subsubsection}{Attaque par fragmentation}{17}
+\contentsline {subsubsection}{Cr\'eation du paquet ARP}{17}
+\contentsline {subsubsection}{Injection du paquet ARP sur le r\'eseau}{18}
+\contentsline {subsubsection}{Crack de la cl\'e WEP}{18}
+\contentsline {section}{\numberline {4.4}Que faire sur le r\'eseau p\'en\'etr\'e?}{18}
+\contentsline {subsection}{\numberline {4.4.1}Attaques passives}{18}
+\contentsline {subsubsection}{Le sniffing}{18}
+\contentsline {subsubsection}{Le balayage de ports}{18}
+\contentsline {subsection}{\numberline {4.4.2}Attaques actives}{18}
+\contentsline {subsubsection}{D\'eni de Service (DOS : \emph {Denial of Service})}{18}
+\contentsline {subsubsection}{Man in the Middle}{19}
+\contentsline {subsubsection}{Backdoors}{19}
+\contentsline {chapter}{\numberline {5}Conclusion}{21}
+\contentsline {section}{\numberline {5.1}The Weak Encryption Protocol}{21}
+\contentsline {section}{\numberline {5.2}Bilan personnel}{21}
+\contentsline {chapter}{A Glossaire}{23}
+\contentsline {chapter}{B Bibliographie}{25}
+\contentsline {chapter}{C Articles de loi}{26}

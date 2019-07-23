@@ -1,0 +1,40 @@
+Les exemples qui vont être présentés ne sont que peu comparé à toutes les possibilités. Ils ont été choisi pour leur but didactique tout en étant encore ludique.
+
+Driftnet et URLSnarf sont les deux programmes qui seront utilisés à la finalité de cette section. Le premier décrypte les paquets reçus et affiche toutes les images qu'il découvre, le deuxième découvre les liens utilisés. En combinant les deux, un hacker peut découvrir ce que sa victime visite sur internet en voyant des liens s'afficher, et les images y correspondant souvent.
+\\
+
+Pour commencer, le programme SSLstrip doit être lancé. Il s'occupe de transformer les connexions HTTP sécurisées en connexion simple. D'abord, nous devons activer le transfert d'IP, puis, le trafic doit être redirigé vers un autre port. Arrivant du port 80, nous le dirigeons vers le port 10000.
+\begin{lstlisting}[language=bash]
+## Forwarding mode:
+    echo "1" > /proc/sys/net/ipv4/ip_forward
+\end{lstlisting}
+\begin{lstlisting}[language=bash]
+## Redirect HTTP traffic:
+    iptables -t nat -A PREROUTING -p tcp 
+    --destination-port 80 -j REDIRECT --to-port 10000
+\end{lstlisting}
+Finalement, SSLstrip est configuré pour écouter le port 10000 est transformé les connexions sécurisées, avec la configuration -l pour définir quel port écouter.
+\begin{lstlisting}[language=bash]
+    sslstrip -l 10000
+\end{lstlisting}
+
+Deuxièmement, Ettercap sera utilisé. Ce programme sert à sniffer les paquets et données provenant des connexions qui ne sont maintenant plus sécurisées. Ayant une interface utilisateur, aucune ligne de code n'est nécessaire.
+\begin{enumerate}
+	\item Tout d'abord, Unified Sniffing est choisi pour sniffer tout le réseau
+	\item L'utilisateur choisi maintenant la carte réseau qu'il veut utiliser, qui sera wlan0 pour nous
+	\item CTRL+S est lancé pour scanner tous les hôtes qui peuvent faire de potentiels victimes
+	\item Leur adresse IP est affichée en appuyant sur H
+	\item Si l'utilisateur appuie sur View, le programme affiche les noms des victimes plutôt que les adresses IP, facilitant l'attaque	
+\end{enumerate}
+La station d'accès doit être définie comme \emph{Target 1}\footnote{Cible} et les victimes comme \emph{Target 2}. Puis, l'attaque MitM ARP Poisoning est choisie avec la spécification de \og Snif remote connections \fg{}. Maintenant que le programme a été correctement configuré, il ne reste qu'à appuyer sur : start sniffing.
+\\
+
+Finalement, Driftnet et URLSnarf peuvent être lancé maintenant que le reste a été configuré, avec deux simples commandes :
+\begin{lstlisting}[language=bash]
+## Driftnet:
+    driftnet -i wlan0
+\end{lstlisting}
+\begin{lstlisting}[language=bash]
+## URLSnarf:
+    urlsnarf -i wlan0
+\end{lstlisting}

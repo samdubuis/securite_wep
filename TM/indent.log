@@ -1,0 +1,26 @@
+INFO: latexindent version 3.5, 2018-08-13, a script to indent .tex files
+      latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
+      Mon Jan  7 08:25:38 2019
+      Filename: La_securite_du_WEP_fichier_maitre.tex
+INFO: Processing switches:
+      -w|--overwrite: Overwrite mode active, will make a back up of La_securite_du_WEP_fichier_maitre.tex first
+INFO: Directory for backup files and indent.log: .
+INFO: YAML settings read: defaultSettings.yaml
+      Reading defaultSettings.yaml from /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
+INFO: YAML settings read: indentconfig.yaml or .indentconfig.yaml
+      Home directory is /home/samuel (didn't find either indentconfig.yaml or .indentconfig.yaml)
+      To specify user settings you would put indentconfig.yaml here: /home/samuel/indentconfig.yaml
+      Alternatively, you can use the hidden file .indentconfig.yaml as: /home/samuel/.indentconfig.yaml
+INFO: Backup procedure (-w flag active):
+      copying La_securite_du_WEP_fichier_maitre.tex to ./La_securite_du_WEP_fichier_maitre.bak0
+      Backup file: ./La_securite_du_WEP_fichier_maitre.bak0
+      La_securite_du_WEP_fichier_maitre.tex will be overwritten after indentation
+INFO: Phase 1: searching for objects
+INFO: Phase 2: finding surrounding indentation
+INFO: Phase 3: indenting objects
+INFO: Phase 4: final indentation check
+INFO: Output routine:
+      Overwriting file La_securite_du_WEP_fichier_maitre.tex
+      --------------
+INFO: Please direct all communication/issues to:
+      https://github.com/cmhughes/latexindent.pl

